@@ -1,0 +1,39 @@
+
+@keyframes arrowMoveDown {
+    0% {
+      transform: translateY(0%); /* Arrow starts above the button */
+      opacity: 0; /* Visible */
+    }
+    25% {
+      transform: translateY(25%); /* Arrow moves halfway down */
+      opacity: .2; /* Slightly hidden, for smoother transition */
+    }
+    50% {
+      transform: translateY(50%); /* Arrow moves halfway down */
+      opacity: .5; /* Slightly hidden, for smoother transition */
+    }
+    75% {
+      transform: translateY(70%); /* Arrow moves halfway down */
+      opacity: .8; /* Slightly hidden, for smoother transition */
+    }
+    100% {
+      transform: translateY(75%); /* Arrow reaches the bottom */
+      opacity: 1; /* Fully visible */
+    }
+  }
+  
+  
+  
+  .arrow-down {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .top-arrow {
+    animation: arrowMoveDown 1s ease-in-out infinite; /* Top arrow moves down */
+  }
+  
+  .bottom-arrow {
+    animation: arrowMoveDown 1s ease-in-out .5s infinite; /* Bottom arrow moves down after a 1s delay */
+  }
+  

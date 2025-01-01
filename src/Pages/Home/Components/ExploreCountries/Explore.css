@@ -1,0 +1,23 @@
+.card {
+    position: relative;
+    border-radius: 16px !important;
+    transition: transform .3s ease-in-out;
+  }
+  
+  .card:hover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px !important;
+    padding: 2px; /* Border thickness */
+    background: linear-gradient(to bottom, #149C7533, #10637cb8);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    z-index: -1;
+  }
+  
+  .card:hover {
+    transform: scale(1.1);
+  }

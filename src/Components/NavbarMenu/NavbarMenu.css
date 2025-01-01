@@ -1,0 +1,10 @@
+.nav-link-active::after {
+  content: '';
+  position: absolute;
+  width: 6px; /* Dot width */
+  height: 6px; /* Dot height */
+  top: 100%;
+  right: 50%;
+  background-color: #0e4a79; /* Dot color */
+  border-radius: 50%; /* Makes it circular */
+}

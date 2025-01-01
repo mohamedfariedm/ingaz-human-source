@@ -1,0 +1,31 @@
+img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  button {
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0c3d63;
+    color: #fff;
+  }
+
+  .shadow-box {
+    position: absolute;
+    border-radius: 24px;
+    width: 359px;
+    height: 273px;
+    max-width: 693px;
+    max-height: 588px;
+    box-shadow: 20px 20px rgba(14, 74, 121, 1);
+    right: 0;
+    bottom: 0;
+  }
+  
+  @media screen and (max-width: 500px) {
+    .shadow-box {
+      width: 200px;
+      height: 200px;
+    }
+  }
