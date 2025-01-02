@@ -14,10 +14,10 @@ const NewsCard = ({ title, description, mainImage, actionIcon, onClick }) => {
     >
       {/* Text Section */}
       <div className="flex flex-col gap-3 w-[336px] absolute top-[274px] left-[17px] z-10">
-        <span className="font-['29LT_Bukra'] text-[16px] font-semibold leading-[29px] text-[#0e4a79] group-hover:text-white transition-colors">
+        <span className=" text-[16px] font-semibold leading-[29px] text-[#0e4a79] group-hover:text-white transition-colors">
           {title}
         </span>
-        <span className="font-['29LT_Bukra'] text-[14px] font-normal leading-[27px] text-[#667680] group-hover:text-white transition-colors">
+        <span className=" text-[14px] font-normal leading-[27px] text-[#667680] group-hover:text-white transition-colors">
           {description}
         </span>
       </div>
@@ -81,7 +81,7 @@ const NewsCard = ({ title, description, mainImage, actionIcon, onClick }) => {
       {/* View More Link */}
       <span
         onClick={onClick}
-        className="absolute top-[432px] right-[16px] text-[16px] font-normal text-[#667680] group-hover:text-white cursor-pointer hover:underline transition-colors"
+        className="absolute top-[432px] right-[16px] text-[16px] font-normal text-[#667680] group-hover:text-white cursor-pointer group-hover:underline transition-colors"
       >
         عـرض الـمـزيـد
       </span>

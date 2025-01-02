@@ -11,6 +11,14 @@ const NewsList = () => {
       title: "لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟",
       description:
         "مع \"إنجاز\"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب.",
+      mainImage: image3, // Replace with actual image
+      secondaryImage: backgroundImage, // Replace with actual image
+      actionIcon: arrow, // Replace with actual icon
+    },
+    {
+      title: "لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟",
+      description:
+        "مع \"إنجاز\"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب.",
       mainImage: image1, // Replace with actual image
       secondaryImage: backgroundImage, // Replace with actual image
       actionIcon: arrow, // Replace with actual icon
@@ -20,14 +28,6 @@ const NewsList = () => {
       description:
         "مع \"إنجاز\"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب.",
       mainImage: image2, // Replace with actual image
-      secondaryImage: backgroundImage, // Replace with actual image
-      actionIcon: arrow, // Replace with actual icon
-    },
-    {
-      title: "لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟",
-      description:
-        "مع \"إنجاز\"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب.",
-      mainImage: image3, // Replace with actual image
       secondaryImage: backgroundImage, // Replace with actual image
       actionIcon: arrow, // Replace with actual icon
     },

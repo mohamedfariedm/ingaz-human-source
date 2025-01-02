@@ -1,5 +1,4 @@
-import HeaderCard from "./Components/HeaderCard/HeaderCard";
-import ImagesCard from "./Components/ImagesCard/ImagesCard";
+import ImagesCard from "./Components/PartnersSection/PartnersSection";
 import CardsBooks from "./Components/WhyCardsBooks/CardsBooks";
 import CardsCollections from "./Components/CardsCollections/CardsCollections";
 import ExploreCountries from "./Components/ExploreCountries/ExploreCountries";
@@ -10,6 +9,8 @@ import SliderHeader from "Pages/BiographyPage/Components/SliderHeader/SliderHead
 import ImagesCardSlide from "./Components/ImagesCardSlide/ImagesCardSlide";
 import ContactInformations from "./Components/ContactInformations/ContactInformations";
 import News from "./Components/News/News";
+import AccreditationSection from "./Components/AccreditationSection/AccreditationSection";
+import PartnersSection from "./Components/PartnersSection/PartnersSection";
 const Home = () => {
   return (
     <>
@@ -17,10 +18,10 @@ const Home = () => {
        <header className="">
         <SliderHeader />
       </header>
+      <PartnersSection />
+      <AccreditationSection />
       <News />
       {/*
-        <HeaderCard />
-        <ImagesCard />
         <CardsBooks />
         <CardsCollections />
         <ExploreCountries />
