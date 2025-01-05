@@ -11,6 +11,7 @@ import ContactInformations from "./Components/ContactInformations/ContactInforma
 import News from "./Components/News/News";
 import AccreditationSection from "./Components/AccreditationSection/AccreditationSection";
 import PartnersSection from "./Components/PartnersSection/PartnersSection";
+import StatisticsSection from "./Components/StatisticsSection/StatisticsSection";
 const Home = () => {
   return (
     <>
@@ -18,6 +19,8 @@ const Home = () => {
        <header className="">
         <SliderHeader />
       </header>
+      <CustomersReviews />
+      <StatisticsSection/>
       <PartnersSection />
       <AccreditationSection />
       <News />
@@ -27,7 +30,6 @@ const Home = () => {
         <ExploreCountries />
         <ImagesCardSlide />
         <BannerHome /> 
-        <CustomersReviews />
         <ContactInformations /> */}
     </>
   );

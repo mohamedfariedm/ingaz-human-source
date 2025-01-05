@@ -1,0 +1,133 @@
+
+.statistics-section {
+  width: 1440px;
+  height: 1036px;
+  background-color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.content-wrapper {
+  width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  position: relative;
+  z-index: 17;
+  margin: 64px 0 0 340px;
+}
+
+.section-title {
+  width: 212px;
+  height: 58px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  font-family: '29LT Bukra', sans-serif;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 58px;
+  color: #0e4a79;
+  text-align: right;
+  white-space: nowrap;
+  z-index: 18;
+}
+
+.section-description {
+  width: 760px;
+  height: 96px;
+  font-family: '29LT Bukra', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 32px;
+  color: #667680;
+  text-align: center;
+  z-index: 19;
+}
+
+.stats-container {
+
+  margin: 54px 0 0 0;
+}
+
+.background-image {
+  width: 1139.5px;
+  height: 605.138px;
+  background-image: url(../../../../assets/statics/Vector.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-49.5%, -52.8%);
+}
+.stat-card {
+  width: calc(100% / 4 - 16px); /* Adjust width dynamically */
+  max-width: 270px; /* Limit maximum width */
+  height: auto; /* Allow the height to adapt */
+  padding: 3vw; /* Responsive padding based on viewport width */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: flex-start;
+  background-color: #f1f8fd;
+  border-radius: 24px;
+  position: relative; /* Position cards in normal flow for small screens */
+  margin: 16px; /* Add spacing between cards */
+}
+@media (max-width: 640px) {
+  .stat-card{
+    width: 100%;
+  }
+}
+
+
+
+
+
+.stat-content {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  align-items: center;
+  align-self: stretch;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #0e4a79;
+}
+
+.stat-label {
+  font-size: 1rem;
+  color: #555;
+  text-align: center;
+}
+
+.stat-number {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 62px;
+  font-weight: 600;
+  line-height: 46px;
+  color: #15b86c;
+  letter-spacing: -1.24px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.stat-label {
+  height: 15px;
+  font-family: '29LT Bukra', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+  line-height: 15px;
+  color: #0e4a79;
+  text-align: center;
+  white-space: nowrap;
+}
