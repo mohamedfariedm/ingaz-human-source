@@ -12,6 +12,8 @@ import News from "./Components/News/News";
 import AccreditationSection from "./Components/AccreditationSection/AccreditationSection";
 import PartnersSection from "./Components/PartnersSection/PartnersSection";
 import StatisticsSection from "./Components/StatisticsSection/StatisticsSection";
+import About from "./Components/About/About";
+import Services from "./Components/Services/Services";
 const Home = () => {
   return (
     <>
@@ -19,17 +21,19 @@ const Home = () => {
        <header className="">
         <SliderHeader />
       </header>
-      <CustomersReviews />
+      <About/>
+      <Services/>
       <StatisticsSection/>
       <PartnersSection />
+      <CustomersReviews />
       <AccreditationSection />
       <News />
       {/*
-        <CardsBooks />
-        <CardsCollections />
+      <ImagesCardSlide />
+      <CardsBooks />
+      <CardsCollections />
+      <BannerHome /> 
         <ExploreCountries />
-        <ImagesCardSlide />
-        <BannerHome /> 
         <ContactInformations /> */}
     </>
   );
