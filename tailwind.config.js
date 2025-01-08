@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      filter: {
+        blue: 'invert(21%) sepia(76%) saturate(2853%) hue-rotate(240deg) brightness(90%) contrast(101%)',
+      },
       animation: {
         rocket: "rocket 0.5s ease-in-out forwards",
         "rocket-reverse": "rocket-reverse 0.5s ease-in-out forwards",

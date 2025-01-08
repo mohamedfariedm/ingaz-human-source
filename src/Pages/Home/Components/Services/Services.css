@@ -1,0 +1,20 @@
+#subtract{
+    background-image: url(../../../../assets/services/subtract.svg);
+}
+
+.cardHolder :hover #subtract{
+    background-image: url(../../../../assets/services/subtract1.svg);
+}
+
+.group-green:hover #textWitehover{
+color: white;
+}
+
+.group-green:hover #svgCapture path{
+    stroke: white;
+}
+
+.group:hover .filter-custom {
+    filter: invert(27%) sepia(51%) saturate(2878%) hue-rotate(346deg) brightness(104%) contrast(97%);
+  }
+

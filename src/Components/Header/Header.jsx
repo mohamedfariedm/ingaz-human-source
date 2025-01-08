@@ -27,7 +27,7 @@ const Header = () => {
   }, []);
 
   return (
-    <header className="fixed z-50 header-container flex w-full h-[100px] py-[18px] px-[16px] md:px-[64px] lg:px-[80px] justify-between items-center bg-white/10 backdrop-blur-md mx-auto">
+    <header className="fixed z-50 header-container flex w-full h-[100px] py-[18px] px-[16px] md:px-[64px] lg:px-[80px] justify-between items-center bg-white/10 backdrop-blur-md mx-auto top-0">
       <Logo />
 
       {/* Full Navigation for Medium and Larger Screens */}

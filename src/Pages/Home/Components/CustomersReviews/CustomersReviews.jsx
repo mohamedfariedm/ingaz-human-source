@@ -105,8 +105,8 @@ const CustomersReviews = () => {
                   </div>
                 </div>
                 <div
+                id="imageCoats"
                   className="absolute top-0 left-0 w-[68px] h-[64px] bg-cover bg-no-repeat flex items-center justify-center z-10"
-                  style={{ backgroundImage: `url(${image1})` }}
                 >
                   <svg
                     width="21.8"
@@ -116,6 +116,7 @@ const CustomersReviews = () => {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
+                                        id="coat"
                       d="M10.3102 18.2771H0L9.70763 0H17.5407L10.3102 18.2771ZM24.5034 18.2771H14.1932L23.9009 0H31.7339L24.5034 18.2771Z"
                       fill="#0E4A79"
                     />

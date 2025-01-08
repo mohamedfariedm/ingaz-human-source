@@ -36,6 +36,10 @@
   font-family: "text_small_Bukra";
 }
 
+.wordSpacing{
+  word-spacing: 5px;
+}
+
 * {
   margin: 0;
   padding: 0;

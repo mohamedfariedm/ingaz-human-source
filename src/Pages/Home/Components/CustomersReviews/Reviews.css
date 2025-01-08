@@ -10,7 +10,20 @@
   z-index: 10; /* Bring the active slide to the front */
 }
 
+#imageCoats {
+background-image: url(../../../../assets/reviews/rectangele.svg);
+}
 
+.swiper-slide-active #imageCoats {
+  background-image:none;
+  -webkit-mask-image: url(../../../../assets/reviews/rectangele.svg) !important;
+  mask-image: url(../../../../assets/reviews/rectangele.svg) !important;
+  background-color: #0E4A79 !important;
+}
+
+.swiper-slide-active #coat{
+  fill: white;
+}
 
 
 
