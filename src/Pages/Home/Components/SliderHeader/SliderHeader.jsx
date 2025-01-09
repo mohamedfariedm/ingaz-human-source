@@ -65,7 +65,7 @@ const SliderHeader = () => {
             البشرية المتكاملة.
           </p>
         </div>
-        <div className=" mt-12 flex w-[135px] group pt-[12px] pr-[49px] pb-[12px] pl-[49px] gap-[8px] justify-center items-center flex-nowrap bg-[#f1f8fd] hover:bg-primary rounded-[999px] relative overflow-hidden mx-auto my-0 hover:scale-[85%] transition-transform duration-700 cursor-pointer">
+        <Link to={"/aboutus"}  className=" mt-12 flex w-[135px] group pt-[12px] pr-[49px] pb-[12px] pl-[49px] gap-[8px] justify-center items-center flex-nowrap bg-[#f1f8fd] hover:bg-primary rounded-[999px] relative overflow-hidden mx-auto my-0 hover:scale-[85%] transition-transform duration-700 cursor-pointer">
       <div className="w-[37px] h-[25px] shrink-0  text-[14px] flex justify-center items-center font-normal leading-[25px] text-[#0e4a79] group-hover:text-white border-none relative whitespace-nowrap pointer" >
        <span className="relative group-hover:translate-x-3 transition-all duration-700">
 
@@ -95,7 +95,7 @@ const SliderHeader = () => {
       </svg>
     </div>
         </div>
-    </div>
+    </Link>
         <div className="flex justify-center items-center ">
         <div className="flex w-[345px] justify-between items-center flex-nowrap relative z-[6] mt-[94px] mr-0 mb-0  pb-10">
     {/* Follow Us Text */}

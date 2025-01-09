@@ -11,8 +11,8 @@ const AboutUs = () => {
   return (
     <>
        <HelmetInfo titlePage={"من نحن"} />
-       <div className=" xl:w-[1152px] relative mx-auto my-[191px] p- xl:p-0">
-<BreadCrumb/>
+       <div className=" xl:w-[1152px] relative mx-auto my-[191px] px-5 xl:px-0">
+<BreadCrumb name={"من نحن"} />
       <div className="flex  flex-col gap-[8px] items-center flex-nowrap relative mt-[66px] mr-0 mb-0  ">
         <span className="xl:h-[87px] self-stretch text_bold_Bukra shrink-0 basis-auto  text-[48px] font-bold leading-[87px] text-[#0e4a79]  relative text-center  z-[1]">
           من نحن ولماذا نحن الخيار الأمثل؟

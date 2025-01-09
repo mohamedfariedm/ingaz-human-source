@@ -8,6 +8,8 @@ import StatisticsSection from "./Components/StatisticsSection/StatisticsSection"
 import About from "./Components/About/About";
 import Services from "./Components/Services/Services";
 const Home = () => {
+
+  
   return (
     <>
        <HelmetInfo titlePage={"الصفحة الرئيسية"} />

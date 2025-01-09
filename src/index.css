@@ -17,7 +17,7 @@
 @font-face {
   font-family: 'text_bold_Bukra';
   src: url(./assets/webFont/29LTBukra-Bold.otf);
-  font-weight: normal;
+  font-weight: 500;
   font-style: normal;
 }
 @font-face {
@@ -338,9 +338,9 @@ html[dir="ltr"] textarea.form-control.is-invalid {
 input::placeholder,
 textarea::placeholder,
 .form-select {
-  font-size: 13px !important;
+  font-size: 16px !important;
   font-weight: 500 !important;
-  color: #667680 !important;
+  color: #BABFC2 !important;
 
 }
 

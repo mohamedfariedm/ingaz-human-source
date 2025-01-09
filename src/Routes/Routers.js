@@ -21,6 +21,8 @@ import Stats from "Pages/Stats/Stats";
 import News from "Pages/News/News";
 import Faq from "Pages/Faq/Faq";
 import AboutUs from "Pages/AboutUs/AboutUs";
+import Terms from "Pages/Terms/Terms";
+import Privacy from "Pages/Privacy/Privacy";
 
 let routers = createBrowserRouter([
   {
@@ -69,6 +71,28 @@ let routers = createBrowserRouter([
         ),
         children: [
           { index: true, element: <News /> },
+        ]
+      },
+      {
+        path: "terms",
+        element: (
+          <>
+            <Outlet />
+          </>
+        ),
+        children: [
+          { index: true, element: <Terms /> },
+        ]
+      },
+      {
+        path: "privacy",
+        element: (
+          <>
+            <Outlet />
+          </>
+        ),
+        children: [
+          { index: true, element: <Privacy /> },
         ]
       },
       {

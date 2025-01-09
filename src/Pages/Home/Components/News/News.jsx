@@ -1,7 +1,41 @@
 import React from "react";
 import NewsList from "./NewsList";
-
+import backgroundImage from "../../../../assets/news/Subtract.svg";
+import image1 from "../../../../assets/news/1.svg";
+import arrow from "../../../../assets/news/arrow-up-left.svg";
+import image2 from "../../../../assets/news/2.svg";
+import image3 from "../../../../assets/news/3.svg";
+import { Link } from "react-router-dom";
 export default function News() {
+
+    const newsData = [
+    {
+      title: "لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟",
+      description:
+        "مع \"إنجاز\"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب.",
+      mainImage: image3, // Replace with actual image
+      secondaryImage: backgroundImage, // Replace with actual image
+      actionIcon: arrow, // Replace with actual icon
+    },
+    {
+      title: "لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟",
+      description:
+        "مع \"إنجاز\"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب.",
+      mainImage: image1, // Replace with actual image
+      secondaryImage: backgroundImage, // Replace with actual image
+      actionIcon: arrow, // Replace with actual icon
+    },
+    {
+      title: "لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟",
+      description:
+        "مع \"إنجاز\"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب.",
+      mainImage: image2, // Replace with actual image
+      secondaryImage: backgroundImage, // Replace with actual image
+      actionIcon: arrow, // Replace with actual icon
+    },
+    // Add more news items here
+  ];
+
   return (
     <div className="main-container  flex flex-col my-16 items-center gap-[4rem] w-full max-w-[1440px] bg-[#fff] relative overflow-hidden mx-auto px-4 sm:px-8">
       {/* Header */}
@@ -15,11 +49,11 @@ export default function News() {
       </div>
 
       {/* News List */}
-      <NewsList />
+      <NewsList newsData={newsData} />
 
       {/* Browse All Button */}
       <div className="group flex justify-center overflow-hidden w-[207px] h-[49px] bg-[#f1f8fd] rounded-full hover:scale-[85%] transition-transform duration-500 cursor-pointer">
-  <span className="flex items-center justify-center relative ">
+  <Link to={"/news"} className="flex items-center justify-center relative ">
     {/* Text */}
     <span className="text-[14px] font-normal text-[#0e4a79] ml-2">
       تصفح جميع الاخبار
@@ -49,7 +83,7 @@ export default function News() {
         />
       </svg>
     </div>
-  </span>
+  </Link>
 </div>
 
 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const NewsCard = ({ title, description, mainImage, actionIcon, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -7,7 +8,7 @@ const NewsCard = ({ title, description, mainImage, actionIcon, onClick }) => {
   const handleMouseLeave = () => setIsHovered(false);
 
   return (
-    <div
+    <Link to={"/stats"}
       className="news-card w-[368px] h-[483px] relative group transition-shadow"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
@@ -85,7 +86,7 @@ const NewsCard = ({ title, description, mainImage, actionIcon, onClick }) => {
       >
         عـرض الـمـزيـد
       </span>
-    </div>
+    </Link>
   );
 };
 
