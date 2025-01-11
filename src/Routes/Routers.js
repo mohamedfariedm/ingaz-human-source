@@ -23,6 +23,8 @@ import Faq from "Pages/Faq/Faq";
 import AboutUs from "Pages/AboutUs/AboutUs";
 import Terms from "Pages/Terms/Terms";
 import Privacy from "Pages/Privacy/Privacy";
+import BussnissForm from "Pages/BussnissForm/BussnissForm";
+import IndividaulsForm from "Pages/IndividaulsForm/IndividaulsForm";
 
 let routers = createBrowserRouter([
   {
@@ -93,6 +95,28 @@ let routers = createBrowserRouter([
         ),
         children: [
           { index: true, element: <Privacy /> },
+        ]
+      },
+      {
+        path: "bussnissform",
+        element: (
+          <>
+            <Outlet />
+          </>
+        ),
+        children: [
+          { index: true, element: <BussnissForm /> },
+        ]
+      },
+      {
+        path: "individaulsForm",
+        element: (
+          <>
+            <Outlet />
+          </>
+        ),
+        children: [
+          { index: true, element: <IndividaulsForm /> },
         ]
       },
       {
