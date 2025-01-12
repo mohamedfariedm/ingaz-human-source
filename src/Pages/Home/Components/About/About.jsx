@@ -4,9 +4,12 @@ import background from "../../../../assets/about/image.svg";
 import question from "../../../../assets/about/question.svg";
 import Arrow from "../../../../assets/about/arrow-left.svg";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 
 const About = () => {
+  const { t } = useTranslation("About"); // Load About namespace
+
 
       useEffect(() => {
         const observer = new IntersectionObserver(
@@ -39,18 +42,14 @@ const About = () => {
     />
 
   </div>
-  <span className="flex xl:w-[466px]  xl:h-[116px] justify-end items-start  text-[32px] font-semibold leading-[58.24px] text-[#0e4a79] absolute top-[186px] xl:left-[831px] text-right z-[1]">
-    لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟
-  </span>
+  <span className="flex xl:w-[466px]  xl:h-[116px] justify-end items-start  text-[32px] font-semibold leading-[58.24px] text-[#0e4a79] absolute top-[186px] xl:left-[831px] text-start z-[1]">
+    {t("title")}  </span>
 
       <div className=" w-full flex flex-col justify-center items-center gap-10 xl:block xl:w-[760px] h-[160px] text-[0px]  mx-auto my-0 xl:absolute xl:top-[413px] xl:left-[537px] z-[6]">
-      <span className="flex md:w-[696px] md:h-[96px] justify-end items-start  text-[16px] font-normal leading-[32px] text-[#667680] relative text-right z-[3] mt-[90px] xl:mt-[32px] mr-0 mb-0 md:ms-[32px] ">
-        مع "إنجاز"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة
-        معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب، والاستشارات باستخدام
-        أحدث التقنيات لدعم أهدافك وتحقيق رؤية المملكة 2030 من خلال تمكين الكوادر
-        الوطنية وبناء شراكات استراتيجية.
+      <span className="flex md:w-[696px] md:h-[96px] justify-end items-start  text-[16px] font-normal leading-[32px] text-[#667680] relative text-start z-[3] mt-[90px] xl:rtl:mt-[32px] xl:ltr:mt-[22px] mr-0 mb-0 md:ms-[32px] ">
+        {t("description")}
       </span>
-      <Link to={"aboutus"} className="flex w-[124px] h-[36px] pt-[14px] pr-[34px] pb-[14px] pl-[34px] gap-[8px] justify-center items-center flex-nowrap bg-[#f1f8fd] group hover:bg-primary hover:scale-75 rounded-[99px] xl:absolute xl:left-0 mt-[-4px] mr-0 mb-0 ml-0 z-10 transition-all duration-[500ms]">
+      <Link to={"aboutus"} className="flex w-[124px] h-[36px] pt-[14px] pr-[34px] pb-[14px] pl-[34px] gap-[8px] justify-center items-center flex-nowrap bg-[#f1f8fd] group hover:bg-primary hover:scale-75 rounded-[99px] xl:absolute xl:rtl:left-0 xl:ltr:right-0 rtl:mt-[-4px] ltr:mt-2 mr-0 mb-0 ml-0 z-10 transition-all duration-[500ms]">
  
         <svg className="stroke-[#0E4A79] group-hover:stroke-white transition-all duration-[500ms]" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M13.334 16H26.6673"  strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -61,7 +60,7 @@ const About = () => {
       <div
       style={{ backgroundImage: `url(${background})` }}
 
-      className=" hidden xl:block xl:w-[760px] xl:h-[160px] bg-cover bg-no-repeat xl:absolute xl:top-0 xl:left-0 z-[2]" />
+      className=" hidden xl:block xl:w-[760px] xl:h-[160px] bg-cover bg-no-repeat xl:absolute xl:top-0 xl:left-0 z-[2]  ltr:rotate-y-180  " />
     </div>
 </div>
 

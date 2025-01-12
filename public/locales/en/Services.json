@@ -1,0 +1,19 @@
+{
+    "title": "Our Services",
+    "subtitle": "Explore our distinguished services",
+    "business": "Business",
+    "individual": "Individuals",
+    "register_now": "Register Now",
+    "categories": {
+      "industrial": "Industrial and Operational Sector",
+      "real_estate": "Real Estate and Infrastructure",
+      "education": "Education and Training Sector",
+      "technology": "Technology and Communication Sector",
+      "energy": "Energy and Environment Sector",
+      "logistics": "Transport and Logistics Services",
+      "retail": "Retail Sector",
+      "hospitality": "Hospitality and Entertainment",
+      "medical": "Medical Sector",
+      "banking": "Banking and Insurance Sector"
+    }
+  }

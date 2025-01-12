@@ -7,7 +7,10 @@ import linkedin from "../../../../assets/footer/linkedin-02.svg";
 import twitter from "../../../../assets/footer/new-twitter.svg";
 import snap from "../../../../assets/footer/snapchat.svg";
 import whatsapp from "../../../../assets/footer/whatsapp.svg";
+import { useTranslation } from "react-i18next";
 const SliderHeader = () => {
+  const { t } = useTranslation("SliderHeader"); // Load SliderHeader namespace
+
   // Array of social media icons and their alt text
   const socialIcons = [
     { src: snap, alt: "Snapchat" },
@@ -57,19 +60,17 @@ const SliderHeader = () => {
         <div className=" absolute bottom-0 start-0 w-full z-[1] text-center text-white ">
         <div className="flex flex-col gap-11 justify-center items-center mt-16">
           <h1 className="text-[48px] font-semibold leading-tight">
-            بخبرة عالمية وكفاءة محلية
+{t("title")}
           </h1>
           <p className="text-[16px] font-normal">
-            انطلق نحو تحقيق أهدافك مع "إنجاز"، الشركة السعودية الرائدة في تقديم حلول الموارد 
-            <br/>
-            البشرية المتكاملة.
+{t("description")}
           </p>
         </div>
         <Link to={"/aboutus"}  className=" mt-12 flex w-[135px] group pt-[12px] pr-[49px] pb-[12px] pl-[49px] gap-[8px] justify-center items-center flex-nowrap bg-[#f1f8fd] hover:bg-primary rounded-[999px] relative overflow-hidden mx-auto my-0 hover:scale-[85%] transition-transform duration-700 cursor-pointer">
       <div className="w-[37px] h-[25px] shrink-0  text-[14px] flex justify-center items-center font-normal leading-[25px] text-[#0e4a79] group-hover:text-white border-none relative whitespace-nowrap pointer" >
        <span className="relative group-hover:translate-x-3 transition-all duration-700">
 
-        المزيد
+{t("more")}
        </span>
         <div className="w-[20px] h-[20px] absolute -left-[80px]  transition-all duration-700 group-hover:-left-5">
       <svg
@@ -100,7 +101,7 @@ const SliderHeader = () => {
         <div className="flex w-[345px] justify-between items-center flex-nowrap relative z-[6] mt-[94px] mr-0 mb-0  pb-10">
     {/* Follow Us Text */}
     <span className="h-[25px] shrink-0 basis-auto  text-[14px] font-medium leading-[25px] text-[#fff] relative text-left whitespace-nowrap z-[14]">
-    تابعونا على
+{t("follow_us")}
   </span>
 
 

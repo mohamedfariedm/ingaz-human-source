@@ -23,10 +23,6 @@ function App() {
         <div className={`App`}>
           <WindowLoader />
           <ToastContainerApp />
-          {/* <div className={`air-plan  ${isHomePage ? "show" : "hidden"}`}>
-            <div className="airPlan-dot" />
-            <img src={air} className="object-fit-cover" alt="airplan" />
-          </div> */}
           <HelmetProvider>
             <RouterProvider router={routers} />
           </HelmetProvider>

@@ -1,21 +1,24 @@
 import React, { useState, useEffect, useRef } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Navigation = () => {
   const location = useLocation();
   const [activeSection, setActiveSection] = useState("");
   const menuRef = useRef(null); // Ref for the dropdown menu
 
+  const { t } = useTranslation("Navigation"); // Load "Navigation" namespace
+
   const links = [
-    { text: "الرئيسية", id: "/#home" },
-    { text: "من نحن", id: "/#about" },
-    { text: "خدمتنا", id: "/#services" },
-    { text: "إنجاز في أرقام", id: "/#numbers" },
-    { text: "الشركاء", id: "/#partners" },
-    { text: "آراء عملائنا", id: "/#reviews" },
-    { text: "الاعتمادات", id: "/#accreditations" },
-    { text: "أخبارنا", id: "/#news" },
-    { text: "تواصل معنا", id: "/contactus" },
+    { textKey: "home", id: "/#home" },
+    { textKey: "about", id: "/#about" },
+    { textKey: "services", id: "/#services" },
+    { textKey: "numbers", id: "/#numbers" },
+    { textKey: "partners", id: "/#partners" },
+    { textKey: "reviews", id: "/#reviews" },
+    { textKey: "accreditations", id: "/#accreditations" },
+    { textKey: "news", id: "/#news" },
+    { textKey: "contactus", id: "/contactus" },
   ];
 
   // Scroll to hash on initial load
@@ -89,7 +92,7 @@ const Navigation = () => {
                 : "font-normal text-gray-600 text-[14px] text_small_Bukra"
             }`}
           >
-            {item.text}
+            {t(item.textKey)}
           </NavLink>
         </li>
       ))}
@@ -98,3 +101,4 @@ const Navigation = () => {
 };
 
 export default Navigation;
+

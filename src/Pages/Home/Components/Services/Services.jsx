@@ -15,8 +15,10 @@ import mask11 from "../../../../assets/services/11.svg";
 import subtract from "../../../../assets/services/subtract.svg";
 import subtract1 from "../../../../assets/services/subtract1.svg";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Services = () => {
+  const { t } = useTranslation("Services");
 
     useEffect(() => {
           const observer = new IntersectionObserver(
@@ -41,20 +43,19 @@ const Services = () => {
   const [selectedCategory, setSelectedCategory] = useState("business");
 
   const cardData = [
-    { name: "القطاع الصناعي والتشغيلي", image: mask1, category: "business" },
-    { name: "قطاع العقارات والبنية التحتية", image: mask2, category: "business" },
-    { name: "قطاع التعليم والتدريب", image: mask3, category: "individual" }, 
-    { name: "قطاع التعليم والتدريب", image: mask3, category: "business" }, 
-    { name: "قطاع التكنولوجيا والاتصالات", image: mask4, category: "business" },
-    { name: "قطاع الطاقة والبيئة", image: mask5, category: "business" },
-    { name: "قطاع النقل والخدمات اللوجستية", image: mask6, category: "business" },
-    { name: "قطاع التجزئة", image: mask7, category: "business" },
-    { name: "قطاع الأعمال", image: mask8, category: "business" },
-    { name: "قطاع الضيافة والترفيه", image: mask9, category: "business" },
-    { name: "قطاع الضيافة والترفيه", image: mask9, category: "individual" },
-    { name: "قطاع الطبي", image: mask10, category: "business" },
-    { name: "قطاع الطبي", image: mask10, category: "individual" },
-    { name: "قطاع البنوك والتأمين", image: mask11, category: "business" },
+    { name: t("categories.industrial"), image: mask1, category: "business" },
+    { name: t("categories.real_estate"), image: mask2, category: "business" },
+    { name: t("categories.education"), image: mask3, category: "individual" },
+    { name: t("categories.education"), image: mask3, category: "business" },
+    { name: t("categories.technology"), image: mask4, category: "business" },
+    { name: t("categories.energy"), image: mask5, category: "business" },
+    { name: t("categories.logistics"), image: mask6, category: "business" },
+    { name: t("categories.retail"), image: mask7, category: "business" },
+    { name: t("categories.hospitality"), image: mask9, category: "business" },
+    { name: t("categories.hospitality"), image: mask9, category: "individual" },
+    { name: t("categories.medical"), image: mask10, category: "business" },
+    { name: t("categories.medical"), image: mask10, category: "individual" },
+    { name: t("categories.banking"), image: mask11, category: "business" },
   ];
 
   const filteredData = cardData.filter((card) => card.category === selectedCategory);
@@ -63,10 +64,10 @@ const Services = () => {
       {/* Header Section */}
       <div className="flex flex-col gap-[20px] items-center text-center mt-16">
         <span className="text-[16px] font-medium leading-[29px] text-[#0e4a79]">
-          خدمتنا
+        {t("title")}
         </span>
         <span className="text-[24px] md:text-[32px] font-semibold leading-[36px] md:leading-[58px] text-[#0e4a79]">
-          اكتشف خدماتنا المتميزة
+        {t("subtitle")}
         </span>
       </div>
 
@@ -83,7 +84,7 @@ const Services = () => {
       }`}
     >
       <span className="flex w-[48px] h-[19px] justify-center items-start shrink-0 basis-auto text-[12px] font-medium leading-[19px] relative text-center whitespace-nowrap z-[3]">
-        الأعمال
+      {t("business")}
       </span>
     </button>
     {/* Individual Toggle */}
@@ -96,7 +97,7 @@ const Services = () => {
       }`}
     >
       <span className="flex w-[35px] h-[19px] justify-end items-start shrink-0 basis-auto text-[12px] font-medium leading-[19px] relative text-right whitespace-nowrap z-[1]">
-        الأفراد
+      {t("individual")}
       </span>
     </div>
   </div>
@@ -109,7 +110,7 @@ const Services = () => {
           <Link
            to={selectedCategory=="business"?"/bussnissform":"/individaulsForm"}
             key={index}
-            className="w-[172px] h-[197px] relative mx-auto my-0 flex flex-col items-end justify-center group transition-all duration-500"
+            className="w-[172px] h-[197px] relative mx-auto my-0 flex flex-col rtl:items-end justify-center group transition-all duration-500"
           >
             {/* Icon */}
             <div
@@ -123,7 +124,7 @@ const Services = () => {
             {/* Button */}
             <div className="group-green flex w-[108px] h-[30px] pt-[5px] pr-[19px] pb-[5px] pl-[19px] gap-[8px] items-center flex-nowrap bg-[#f1f8fd] hover:bg-[#15B86C] rounded-[138.079px] border-none relative z-[1] pointer mt-[27px] mr-0 mb-0 ml-px  group-hover:translate-x-8 transition-all duration-500 ">
               <span id="textWitehover" className="flex w-[42px] h-[18px] justify-center items-start shrink-0 basis-auto text-[10px] font-medium leading-[18px] text-[#0e4a79] group-hover:text-[#15B86C] relative text-center whitespace-nowrap z-[3]">
-                سجل الان
+              {t("register_now")}
               </span>
               <div
                 className="w-[20px] h-[20px] shrink-0 bg-cover bg-no-repeat relative z-[2]"

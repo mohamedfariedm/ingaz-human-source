@@ -40,5 +40,19 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins:  [
+    function ({ addUtilities }) {
+      addUtilities({
+        '.rotate-y-180': {
+          transform: 'rotateY(180deg)',
+        },
+        '.rotate-y-0': {
+          transform: 'rotateY(0deg)',
+        },
+        '.perspective': {
+          perspective: '1000px',
+        },
+      });
+    },
+  ],
 };

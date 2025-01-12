@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
-import { useLanguage } from "./LanguageContext";
+import { useTranslation } from "react-i18next";
 import { Dropdown } from "react-bootstrap";
 import glopal from "../../assets/global.svg";
 
 const LanguageSelector = () => {
   const dropdownRef = useRef(null);
-  const { currentLanguage, setCurrentLanguage } = useLanguage();
+  const { i18n } = useTranslation();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => setIsDropdownOpen((prev) => !prev);
@@ -24,7 +24,7 @@ const LanguageSelector = () => {
   }, []);
 
   const handleLanguageChange = (newLanguage) => {
-    setCurrentLanguage(newLanguage);
+    i18n.changeLanguage(newLanguage); // Update language using i18next
     setIsDropdownOpen(false);
   };
 
@@ -35,8 +35,8 @@ const LanguageSelector = () => {
         onClick={toggleDropdown}
         className="flex items-center gap-2 cursor-pointer bg-blue-100 rounded-[8px] px-[12px] py-[8px] focus:outline-none"
       >
-        <span className="text-small-bukra text-[14px] text-primary hidden md:flex">
-          {currentLanguage === "ar" ? "العربية" : "English"}
+        <span className=" text-[14px] text-primary hidden md:flex">
+          {i18n.language === "ar" ? "العربية" : "English"}
         </span>
         <div
           className="language-icon w-[20px] h-[20px]"
@@ -56,7 +56,7 @@ const LanguageSelector = () => {
               <button
                 onClick={() => handleLanguageChange("en")}
                 className={`block w-full text-start px-4 py-2 hover:bg-blue-100 ${
-                  currentLanguage === "en" ? "font-bold text-blue-700" : ""
+                  i18n.language === "en" ? "font-bold text-blue-700" : ""
                 }`}
               >
                 English
@@ -66,7 +66,7 @@ const LanguageSelector = () => {
               <button
                 onClick={() => handleLanguageChange("ar")}
                 className={`block w-full text-start px-4 py-2 hover:bg-blue-100 ${
-                  currentLanguage === "ar" ? "font-bold text-blue-700" : ""
+                  i18n.language === "ar" ? "font-bold text-blue-700" : ""
                 }`}
               >
                 العربية
