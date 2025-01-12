@@ -1,121 +1,96 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useState, useEffect, useRef } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const location = useLocation();
-  let navigation=useNavigate()
-  const [navItems, setNavItems] = useState([
-    { text: "الرئيسية", id: "home", active: true },
-    { text: "من نحن", id: "about", active: false },
-    { text: "خدمتنا", id: "services", active: false },
-    { text: "إنجاز في أرقام", id: "numbers", active: false },
-    { text: "الشركاء", id: "partners", active: false },
-    { text: "آراء عملائنا", id: "reviews", active: false },
-    { text: "الاعتمادات", id: "accreditations", active: false },
-    { text: "أخبارنا", id: "news", active: false },
-    { text: "تواصل معنا", id: "contact", active: false, redirect: true },
-  ]);
+  const [activeSection, setActiveSection] = useState("");
+  const menuRef = useRef(null); // Ref for the dropdown menu
 
+  const links = [
+    { text: "الرئيسية", id: "/#home" },
+    { text: "من نحن", id: "/#about" },
+    { text: "خدمتنا", id: "/#services" },
+    { text: "إنجاز في أرقام", id: "/#numbers" },
+    { text: "الشركاء", id: "/#partners" },
+    { text: "آراء عملائنا", id: "/#reviews" },
+    { text: "الاعتمادات", id: "/#accreditations" },
+    { text: "أخبارنا", id: "/#news" },
+    { text: "تواصل معنا", id: "/contactus" },
+  ];
+
+  // Scroll to hash on initial load
   useEffect(() => {
-    const currentPath = location.pathname;
-    const currentHash = location.hash;
-
-    if (currentPath === "/contactus") {
-      setNavItems((prevItems) =>
-        prevItems.map((item) => ({
-          ...item,
-          active: item.id === "contact",
-        }))
-      );
-    } else {
-      const activeId = currentHash.replace("#", "") || "home";
-      setNavItems((prevItems) =>
-        prevItems.map((item) => ({
-          ...item,
-          active: item.id === activeId,
-        }))
-      );
+    if (location.hash) {
+      const element = document.getElementById(location.hash.slice(1));
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
     }
   }, [location]);
 
+  // IntersectionObserver for active section detection
   useEffect(() => {
-    const sections = navItems.map((item) => document.getElementById(item.id));
     const observerOptions = {
       root: null,
       rootMargin: "0px",
-      threshold: 0.5,
+      threshold: 0.6,
     };
 
     const observerCallback = (entries) => {
+      let mostVisibleSection = null;
+      let maxIntersectionRatio = 0;
+
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const sectionId = entry.target.id;
-          window.history.replaceState(null, null, `#${sectionId}`);
-          setNavItems((prevItems) =>
-            prevItems.map((item) => ({
-              ...item,
-              active: item.id === sectionId,
-            }))
-          );
+        if (entry.isIntersecting && entry.intersectionRatio > maxIntersectionRatio) {
+          mostVisibleSection = entry.target.id;
+          maxIntersectionRatio = entry.intersectionRatio;
         }
       });
+
+      if (mostVisibleSection && mostVisibleSection !== activeSection) {
+        setActiveSection(mostVisibleSection);
+
+        const newUrl = `/#${mostVisibleSection}`;
+        if (window.location.hash !== newUrl) {
+          window.history.pushState(null, "", newUrl);
+        }
+      }
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-    sections.forEach((section) => {
+
+    links.forEach((link) => {
+      const section = document.getElementById(link.id.slice(2)); // Remove "/#" to get the section id
       if (section) observer.observe(section);
     });
 
     return () => {
-      sections.forEach((section) => {
-        if (section) observer.unobserve(section);
-      });
+      observer.disconnect();
     };
-  }, [navItems]);
+  }, [links, activeSection]);
 
-  const handleNavigationClick = (index, id, redirect) => {
-    if (redirect) {
-      navigation("/contactus")
-      return;
-    }
-
-    const isHomePage = location.pathname === "/";
-    if (!isHomePage) {
-      navigation(`/#${id}`)
-      return;
-    }
-
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-
-    setNavItems((prevItems) =>
-      prevItems.map((item, i) => ({
-        ...item,
-        active: i === index,
-      }))
-    );
+  // Function to determine if a link is active
+  const isLinkActive = (href) => {
+    return `/#${activeSection}` === href;
   };
 
   return (
-    <ul className="flex flex-wrap flex-col md:flex-row gap-4 md:gap-8 items-center">
-      {navItems.map((item, index) => (
+    <ul
+      ref={menuRef} // Attach ref here
+      className="flex flex-wrap flex-col md:flex-row gap-4 md:gap-8 items-center"
+    >
+      {links.map((item, index) => (
         <li key={index}>
-          <Link
-            to={item.redirect ? "/contactus" : `/#${item.id}`}
+          <NavLink
+            to={item.id}
             className={`${
-              item.active
+              isLinkActive(item.id)
                 ? "font-extrabold text-primary text-[14px]"
                 : "font-normal text-gray-600 text-[14px] text_small_Bukra"
             }`}
-            onClick={(e) => {
-              e.preventDefault(); // Prevent default link behavior
-              handleNavigationClick(index, item.id, item.redirect);
-            }}
           >
             {item.text}
-          </Link>
+          </NavLink>
         </li>
       ))}
     </ul>

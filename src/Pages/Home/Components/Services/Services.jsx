@@ -106,7 +106,8 @@ const Services = () => {
       {/* Card Section */}
       <div className="flex flex-wrap justify-center gap-x-[24px] gap-y-[48px] max-w-[1152px] mx-auto  cardHolder">
         {filteredData.map((card, index) => (
-          <Link to={selectedCategory=="business"?"/bussnissform":"/individaulsForm"}
+          <Link
+           to={selectedCategory=="business"?"/bussnissform":"/individaulsForm"}
             key={index}
             className="w-[172px] h-[197px] relative mx-auto my-0 flex flex-col items-end justify-center group transition-all duration-500"
           >
