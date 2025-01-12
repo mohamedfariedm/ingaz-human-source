@@ -50,7 +50,7 @@ const ContactItem = ({ label, value, icon }) => (
     {/* Label and Value */}
     <div className="flex flex-col gap-[2px] sm:gap-[4px] text-center sm:text-right">
       <span className="text-[10px] sm:text-[12px] text-[#667680]">{label}</span>
-      <span className="text-[12px] sm:text-[14px] text-[#0e4a79]">{value}</span>
+      <span className="text-[12px] sm:text-[14px] text-[#0e4a79]" dir="ltr">{value}</span>
     </div>
   </div>
 );

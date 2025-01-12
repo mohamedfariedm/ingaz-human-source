@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Services.css";
 import arrowLeft from "../../../../assets/about/arrow-left.svg";
 import mask1 from "../../../../assets/services/1.svg";
@@ -14,24 +14,52 @@ import mask10 from "../../../../assets/services/10.svg";
 import mask11 from "../../../../assets/services/11.svg";
 import subtract from "../../../../assets/services/subtract.svg";
 import subtract1 from "../../../../assets/services/subtract1.svg";
+import { Link } from "react-router-dom";
 
 const Services = () => {
+
+    useEffect(() => {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("animate-visible");
+                } else {
+                  entry.target.classList.remove("animate-visible");
+                }
+              });
+            },
+            { threshold: 0.2 } // Trigger animation when 20% of the section is visible
+          );
+      
+          const sections = document.querySelectorAll(".animate-section");
+          sections.forEach((section) => observer.observe(section));
+      
+          return () => observer.disconnect(); // Cleanup
+        }, []);
+
+  const [selectedCategory, setSelectedCategory] = useState("business");
+
   const cardData = [
-    { name: "القطاع الصناعي والتشغيلي", image: mask1 },
-    { name: "قطاع العقارات والبنية التحتية", image: mask2 },
-    { name: "قطاع التعليم والتدريب", image: mask3 },
-    { name: "قطاع التكنولوجيا والاتصالات", image: mask4 },
-    { name: "قطاع الطاقة والبيئة", image: mask5 },
-    { name: "قطاع النقل والخدمات اللوجستية", image: mask6 },
-    { name: "قطاع التجزئة", image: mask7 },
-    { name: "قطاع الأعمال", image: mask8 },
-    { name: "قطاع الضيافة والترفيه", image: mask9 },
-    { name: "قطاع الطبي", image: mask10 },
-    { name: "قطاع البنوك والتأمين", image: mask11 },
+    { name: "القطاع الصناعي والتشغيلي", image: mask1, category: "business" },
+    { name: "قطاع العقارات والبنية التحتية", image: mask2, category: "business" },
+    { name: "قطاع التعليم والتدريب", image: mask3, category: "individual" }, 
+    { name: "قطاع التعليم والتدريب", image: mask3, category: "business" }, 
+    { name: "قطاع التكنولوجيا والاتصالات", image: mask4, category: "business" },
+    { name: "قطاع الطاقة والبيئة", image: mask5, category: "business" },
+    { name: "قطاع النقل والخدمات اللوجستية", image: mask6, category: "business" },
+    { name: "قطاع التجزئة", image: mask7, category: "business" },
+    { name: "قطاع الأعمال", image: mask8, category: "business" },
+    { name: "قطاع الضيافة والترفيه", image: mask9, category: "business" },
+    { name: "قطاع الضيافة والترفيه", image: mask9, category: "individual" },
+    { name: "قطاع الطبي", image: mask10, category: "business" },
+    { name: "قطاع الطبي", image: mask10, category: "individual" },
+    { name: "قطاع البنوك والتأمين", image: mask11, category: "business" },
   ];
 
+  const filteredData = cardData.filter((card) => card.category === selectedCategory);
   return (
-    <div className="main-container w-full h-auto bg-[#fff] relative overflow-hidden mx-auto mb-16 my-0 px-4 lg:px-0">
+    <div id="services" className="main-container w-full h-auto bg-[#fff] relative overflow-hidden mx-auto mb-16 my-0 px-4 lg:px-0 animate-section opacity-0 transition-opacity duration-1000">
       {/* Header Section */}
       <div className="flex flex-col gap-[20px] items-center text-center mt-16">
         <span className="text-[16px] font-medium leading-[29px] text-[#0e4a79]">
@@ -42,26 +70,43 @@ const Services = () => {
         </span>
       </div>
 
-      {/* Button Section */}
+      {/* Button toggle Section */}
       <div className="flex justify-center mt-[80px] mb-[80px] gap-4">
-        <div className="main-container flex w-[180px] pt-[6px] pr-[6px] pb-[6px] pl-[6px] items-center flex-nowrap bg-[#f1f8fd] rounded-[99px] relative mx-auto my-0">
-          <button className="flex w-[80px] pt-[8px] pr-[16px] pb-[8px] pl-[16px] gap-[8px] justify-center items-center shrink-0 flex-nowrap bg-[#0e4a79] rounded-[99px] border-none relative z-[2] pointer">
-            <span className="flex w-[48px] h-[19px] justify-center items-start shrink-0 basis-auto text-[12px] font-medium leading-[19px] text-[#fff] relative text-center whitespace-nowrap z-[3]">
-              الأعمال
-            </span>
-          </button>
-          <div className="flex w-[88px] pt-[8px] pr-[16px] pb-[8px] pl-[16px] gap-[8px] justify-center items-center shrink-0 flex-nowrap rounded-[99px] relative">
-            <span className="flex w-[35px] h-[19px] justify-end items-start shrink-0 basis-auto text-[12px] font-medium leading-[19px] text-[#667680] relative text-right whitespace-nowrap z-[1]">
-              الأفراد
-            </span>
-          </div>
-        </div>
-      </div>
+  <div className="main-container flex w-[180px] pt-[6px] pr-[6px] pb-[6px] pl-[6px] items-center flex-nowrap bg-[#f1f8fd] rounded-[99px] relative mx-auto my-0">
+    {/* Business Button */}
+    <button
+      onClick={() => setSelectedCategory("business")}
+      className={`flex w-[80px] pt-[8px] pr-[16px] pb-[8px] pl-[16px] gap-[8px] justify-center items-center shrink-0 flex-nowrap rounded-[99px] border-none relative z-[2] pointer ${
+        selectedCategory === "business"
+          ? "bg-[#0e4a79] text-[#fff]"
+          : "bg-transparent text-[#667680]"
+      }`}
+    >
+      <span className="flex w-[48px] h-[19px] justify-center items-start shrink-0 basis-auto text-[12px] font-medium leading-[19px] relative text-center whitespace-nowrap z-[3]">
+        الأعمال
+      </span>
+    </button>
+    {/* Individual Toggle */}
+    <div
+      onClick={() => setSelectedCategory("individual")}
+      className={`flex cursor-pointer w-[88px] pt-[8px] pr-[16px] pb-[8px] pl-[16px] gap-[8px] justify-center items-center shrink-0 flex-nowrap rounded-[99px] relative pointer ${
+        selectedCategory === "individual"
+          ? "bg-[#0e4a79] text-[#fff]"
+          : "bg-transparent text-[#667680]"
+      }`}
+    >
+      <span className="flex w-[35px] h-[19px] justify-end items-start shrink-0 basis-auto text-[12px] font-medium leading-[19px] relative text-right whitespace-nowrap z-[1]">
+        الأفراد
+      </span>
+    </div>
+  </div>
+</div>
+
 
       {/* Card Section */}
       <div className="flex flex-wrap justify-center gap-x-[24px] gap-y-[48px] max-w-[1152px] mx-auto  cardHolder">
-        {cardData.map((card, index) => (
-          <div
+        {filteredData.map((card, index) => (
+          <Link to={selectedCategory=="business"?"/bussnissform":"/individaulsForm"}
             key={index}
             className="w-[172px] h-[197px] relative mx-auto my-0 flex flex-col items-end justify-center group transition-all duration-500"
           >
@@ -94,7 +139,7 @@ const Services = () => {
             id="subtract"
               className="w-[172px] h-[197px] bg-cover bg-no-repeat absolute top-0 left-0 transition-all duration-500"
             />
-          </div>
+          </Link>
         ))}
       </div>
     </div>

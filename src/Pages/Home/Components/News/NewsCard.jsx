@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const NewsCard = ({ title, description, mainImage, actionIcon, onClick }) => {
@@ -6,10 +6,28 @@ const NewsCard = ({ title, description, mainImage, actionIcon, onClick }) => {
 
   const handleMouseEnter = () => setIsHovered(true);
   const handleMouseLeave = () => setIsHovered(false);
-
+  useEffect(() => {
+              const observer = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add("animate-visible");
+                    } else {
+                      entry.target.classList.remove("animate-visible");
+                    }
+                  });
+                },
+                { threshold: 0.2 } // Trigger animation when 20% of the section is visible
+              );
+          
+              const sections = document.querySelectorAll(".animate-section");
+              sections.forEach((section) => observer.observe(section));
+          
+              return () => observer.disconnect(); // Cleanup
+            }, []);
   return (
     <Link to={"/stats"}
-      className="news-card w-[368px] h-[483px] relative group transition-shadow"
+      className="news-card w-[368px] h-[483px] relative group transition-shadow animate-section opacity-0 transition-opacity duration-1000"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >

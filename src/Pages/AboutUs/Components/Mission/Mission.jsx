@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import mission from "../../../../assets/mission/vector.svg";
 
 
 const Mission = () => {
+  useEffect(() => {
+              const observer = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add("animate-visible");
+                    } else {
+                      entry.target.classList.remove("animate-visible");
+                    }
+                  });
+                },
+                { threshold: 0.2 } // Trigger animation when 20% of the section is visible
+              );
+          
+              const sections = document.querySelectorAll(".animate-section");
+              sections.forEach((section) => observer.observe(section));
+          
+              return () => observer.disconnect(); // Cleanup
+            }, []);
   return (
-<div className="main-container md:w-[1457.5px] md:h-[506.05px] relative mx-auto mt-[191px] my-0">
+<div className="main-container md:w-[1457.5px] md:h-[506.05px] relative mx-auto mt-[191px] my-0 animate-section opacity-0 transition-opacity duration-1000">
   <div className="flex md:w-[571px] flex-col gap-[24px] items-end flex-nowrap relative pt-[55px] mr-0 mb-0 ">
     <span className="md:h-[87px] self-stretch shrink-0 basis-auto  text-[48px] font-semibold leading-[87px] text-[#0e4a79] tracking-[0.96px] relative text-right  z-[3]">
       رسالتنا

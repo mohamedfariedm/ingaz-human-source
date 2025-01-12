@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import vector from "../../../../assets/assosiates/Vector.svg";
 import image1 from "../../../../assets/assosiates/6.svg";
 import image2 from "../../../../assets/assosiates/8.svg";
@@ -11,8 +11,28 @@ import image8 from "../../../../assets/assosiates/2.svg";
 import image9 from "../../../../assets/assosiates/3.svg";
 import image10 from "../../../../assets/assosiates/7.svg";
 export default function AccreditationSection() {
+
+     useEffect(() => {
+            const observer = new IntersectionObserver(
+              (entries) => {
+                entries.forEach((entry) => {
+                  if (entry.isIntersecting) {
+                    entry.target.classList.add("animate-visible");
+                  } else {
+                    entry.target.classList.remove("animate-visible");
+                  }
+                });
+              },
+              { threshold: 0.2 } // Trigger animation when 20% of the section is visible
+            );
+        
+            const sections = document.querySelectorAll(".animate-section");
+            sections.forEach((section) => observer.observe(section));
+        
+            return () => observer.disconnect(); // Cleanup
+          }, []);
   return (
-    <div className="main-container w-full xl:w-[1440px] xl:h-[793px] bg-[#fff] relative overflow-hidden mx-auto my-0">
+    <div id="accreditations" className="main-container w-full xl:w-[1440px] xl:h-[793px] bg-[#fff] relative overflow-hidden mx-auto my-0 animate-section opacity-0 transition-opacity duration-1000">
       <div className="flex xl:w-[550px] flex-col gap-[20px] items-center flex-nowrap relative z-[22] mt-[64px] mx-auto">
       <span className="xl:h-[29px]  text-[16px] font-medium leading-[29px] text-[#0e4a79] text-center">
           الاعتمادات

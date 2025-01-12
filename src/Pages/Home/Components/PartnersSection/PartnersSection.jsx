@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import image1 from "../../../../assets/partners/18.svg";
 import image2 from "../../../../assets/partners/17.svg";
 import image3 from "../../../../assets/partners/16.svg";
@@ -17,11 +17,32 @@ import image15 from "../../../../assets/partners/27.svg";
 import image16 from "../../../../assets/partners/35.svg";
 
 export default function PartnersSection() {
+
+    useEffect(() => {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("animate-visible");
+                } else {
+                  entry.target.classList.remove("animate-visible");
+                }
+              });
+            },
+            { threshold: 0.2 } // Trigger animation when 20% of the section is visible
+          );
+      
+          const sections = document.querySelectorAll(".animate-section");
+          sections.forEach((section) => observer.observe(section));
+      
+          return () => observer.disconnect(); // Cleanup
+        }, []);
+
   const images = [image1, image2, image3, image4, image5, image6, image7, image8];
   const imagesTwo = [image16, image15, image14, image13, image12, image11, image10, image9];
 
   return (
-    <div className="main-container max-w-[1440px] h-auto  xl:h-[602px] bg-[#fff] relative overflow-hidden mx-auto my-0">
+    <div id="partners" className="main-container max-w-[1440px] h-auto  xl:h-[602px] bg-[#fff] relative overflow-hidden mx-auto my-0 animate-section opacity-0 transition-opacity duration-1000">
       {/* Title Section */}
       <div className="flex  flex-col gap-[20px] items-center flex-nowrap relative z-[41] mt-[64px] mx-auto">
         <span className="h-[29px] text-[16px] font-medium leading-[29px] text-[#0e4a79] text-center">

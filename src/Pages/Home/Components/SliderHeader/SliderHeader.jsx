@@ -38,7 +38,7 @@ const SliderHeader = () => {
     }, []);
   return (
     <>
-    <div id="main"></div>
+    <div id="home"></div>
       <div className="banner-main-area--1 h-[150vh]">
         <div className="banner-one section-padding bg-image h-[150vh] lg:h-[150vh]  ">
           <div className="video-bg overlay-bg animate-section opacity-0 transition-opacity duration-1000">
@@ -54,7 +54,7 @@ const SliderHeader = () => {
               <source src="https://s3-figma-videos-production-sig.figma.com/video/1252915703189651761/TEAM/81fe/069d/-e6cc-4aa2-9003-241779d178c5?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pszZO8hO1485GmNc2Hjznt0oD1uPzym073UV-xXnl8k3PWBd~vkp6l1N-jpPWdgs0M6C8c28a9znMhTr5G1~0GJQlsHwq2BVpy~7HtINHR-LOaqezG1moBhNqa~JH-bePWXIMMBK69HdMYWRmrZakq8JKkyurOBw3ofsNJAHzufTzrYdvbtf3upwSBFv8iKNKoFpK-r4VOkREsNWj~3EenNTPjNbAi6Uu1gc~8GUIaMuH~KvFm-CTzFbCH4NKA~4YvSVhZJJBB037tghe2Fsde7WfjE4E3lRIDm5mjHwLel-Kxy5WJ9OXqBm7sjs96Y7INIaULYRx2rBLbl3uJOY6g__" type="video/mp4" />
             </video>
           </div>
-        <div className=" absolute bottom-0 w-full z-[1] text-center text-white ">
+        <div className=" absolute bottom-0 start-0 w-full z-[1] text-center text-white ">
         <div className="flex flex-col gap-11 justify-center items-center mt-16">
           <h1 className="text-[48px] font-semibold leading-tight">
             بخبرة عالمية وكفاءة محلية
@@ -65,11 +65,11 @@ const SliderHeader = () => {
             البشرية المتكاملة.
           </p>
         </div>
-        <Link to={"/aboutus"}  className=" mt-12 flex w-[135px] group pt-[12px] pr-[49px] pb-[12px] pl-[49px] gap-[8px] justify-center items-center flex-nowrap bg-[#f1f8fd] hover:bg-primary rounded-[999px] relative overflow-hidden mx-auto my-0 hover:scale-[85%] transition-transform duration-700 cursor-pointer">
+        <Link to={"aboutus"}  className=" mt-12 flex w-[135px] group pt-[12px] pr-[49px] pb-[12px] pl-[49px] gap-[8px] justify-center items-center flex-nowrap bg-[#f1f8fd] hover:bg-primary rounded-[999px] relative overflow-hidden mx-auto my-0 hover:scale-[85%] transition-transform duration-700 cursor-pointer">
       <div className="w-[37px] h-[25px] shrink-0  text-[14px] flex justify-center items-center font-normal leading-[25px] text-[#0e4a79] group-hover:text-white border-none relative whitespace-nowrap pointer" >
        <span className="relative group-hover:translate-x-3 transition-all duration-700">
 
-        المذيد
+        المزيد
        </span>
         <div className="w-[20px] h-[20px] absolute -left-[80px]  transition-all duration-700 group-hover:-left-5">
       <svg

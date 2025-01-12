@@ -1,10 +1,29 @@
-import React from "react";
+import React, { useEffect } from "react";
 import visson from "../../../../assets/mission/vector2.svg";
 
 
 const Vission = () => {
+  useEffect(() => {
+              const observer = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add("animate-visible");
+                    } else {
+                      entry.target.classList.remove("animate-visible");
+                    }
+                  });
+                },
+                { threshold: 0.2 } // Trigger animation when 20% of the section is visible
+              );
+          
+              const sections = document.querySelectorAll(".animate-section");
+              sections.forEach((section) => observer.observe(section));
+          
+              return () => observer.disconnect(); // Cleanup
+            }, []);
   return (
-<div  className="main-container xl:w-[1642px] xl:h-[498.455px] relative mx-auto my-[110px]  ">
+<div  className="main-container xl:w-[1642px] xl:h-[498.455px] relative mx-auto my-[110px] animate-section opacity-0 transition-opacity duration-1000 ">
 
 
   {/* Vision Section */}

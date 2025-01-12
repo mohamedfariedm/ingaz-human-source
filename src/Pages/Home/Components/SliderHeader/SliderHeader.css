@@ -44,7 +44,7 @@
 }
 
 .banner-main-area--1 .banner-one .overlay-bg::after {
-  background: linear-gradient(to top, #0e4b7960, rgba(0, 0, 0, 0));
+  background: linear-gradient(to top, #0E4A79, #0E4A7900);
   z-index: 1;
 }
 

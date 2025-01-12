@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Reviews.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.css";
@@ -11,9 +11,29 @@ import arrowLeft from "../../../../assets/reviews/arrow-left-01.svg";
 import star from "../../../../assets/reviews/star.svg";
 
 const CustomersReviews = () => {
+    useEffect(() => {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("animate-visible");
+                } else {
+                  entry.target.classList.remove("animate-visible");
+                }
+              });
+            },
+            { threshold: 0.2 } // Trigger animation when 20% of the section is visible
+          );
+      
+          const sections = document.querySelectorAll(".animate-section");
+          sections.forEach((section) => observer.observe(section));
+      
+          return () => observer.disconnect(); // Cleanup
+        }, []);
   return (
     <div
-    className="main-container flex flex-col gap-[82px] w-full max-w-[1440px] h-auto sm:h-[838px] bg-white relative overflow-hidden mx-auto my-0">
+    id="reviews"
+    className="main-container flex flex-col gap-[82px] w-full max-w-[1440px] h-auto sm:h-[838px] bg-white relative overflow-hidden mx-auto my-0 animate-section opacity-0 transition-opacity duration-1000">
       {/* Header */}
       <div className="flex flex-col gap-5 items-center relative  mt-16 sm:mt-[64px] mx-auto w-[512px] text-center">
         <span className="text-sm sm:text-base font-medium leading-[29px] text-[#0e4a79]">
@@ -130,7 +150,7 @@ const CustomersReviews = () => {
 
       {/* Navigation Buttons */}
       <div className="flex justify-center items-center gap-4 mt-12">
-        <div className="swiper-prev w-16 h-16 flex items-center justify-center border border-gray-300 group hover:bg-primary hover:scale-90 rounded-full bg-white transition-all duration-[1000ms] shadow-md">
+        <div className="swiper-prev cursor-pointer w-16 h-16 flex items-center justify-center border border-gray-300 group hover:bg-primary hover:scale-90 rounded-full bg-white transition-all duration-[1000ms] shadow-md">
           <div
             className="w-6 h-6 rotate-180 "
 
@@ -143,7 +163,7 @@ const CustomersReviews = () => {
 
           </div>
         </div>
-        <div className="swiper-next w-16 h-16 flex items-center justify-center border border-gray-300 rounded-full group hover:bg-primary hover:scale-90 transition-all duration-[1000ms]  bg-white shadow-md">
+        <div className="swiper-next cursor-pointer w-16 h-16 flex items-center justify-center border border-gray-300 rounded-full group hover:bg-primary hover:scale-90 transition-all duration-[1000ms]  bg-white shadow-md">
           <div
             className="w-6 h-6 bg-cover bg-no-repeat"
 

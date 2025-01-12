@@ -1,14 +1,34 @@
 import HelmetInfo from "Components/HelmetInfo/HelmetInfo";
 import BreadCrumb from "Components/BreadCrumb/BreadCrumb";
 import singleImage from "../../assets/news/rectangle.svg";
+import { useEffect } from "react";
 
 const Stats = () => {
+  useEffect(() => {
+              const observer = new IntersectionObserver(
+                (entries) => {
+                  entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                      entry.target.classList.add("animate-visible");
+                    } else {
+                      entry.target.classList.remove("animate-visible");
+                    }
+                  });
+                },
+                { threshold: 0.2 } // Trigger animation when 20% of the section is visible
+              );
+          
+              const sections = document.querySelectorAll(".animate-section");
+              sections.forEach((section) => observer.observe(section));
+          
+              return () => observer.disconnect(); // Cleanup
+            }, []);
   return (
     <>
        <HelmetInfo titlePage={"تفاصيل الخبر"} />
        <div className="xl:w-[1152px] flex gap-[50px] flex-col relative mx-auto my-[164px] px-5 xl:px-0">
        <BreadCrumb name={"تفاصيل الخبر"} />
-  <div className="flex xl:w-[1014px] flex-col gap-[24px] items-center shrink-0 flex-nowrap relative mx-auto z-[5]">
+  <div className="flex xl:w-[1014px] flex-col gap-[24px] items-center shrink-0 flex-nowrap relative mx-auto z-[5] animate-section opacity-0 transition-opacity duration-1000">
     <span className="flex xl:w-[1014px] xl:h-[174px] justify-center items-start self-stretch shrink-0  text-[48px] text_bold_Bukra leading-[87.36px] text-[#0e4a79] tracking-[0.50px] relative text-center z-[6]">
       رحلة التميز في توفير الكوادر البشرية لتلبية احتياجات الأفراد والأعمال
       في المملكة
@@ -21,7 +41,7 @@ const Stats = () => {
       بناء حياة مستدامة ومتميزة للمواطنين والمقيمين في جميع أنحاء المملكة.
     </span>
   </div>
-  <div className="xl:w-[1152px] flex flex-col gap-[63px] items-start self-stretch shrink-0 flex-nowrap relative z-[8]">
+  <div className="xl:w-[1152px] flex flex-col gap-[63px] items-start self-stretch shrink-0 flex-nowrap relative z-[8] animate-section opacity-0 transition-opacity duration-1000">
     <div
       className="h-[648px]  self-stretch shrink-0 bg-[rgba(217,217,217,0.2)] bg-cover bg-no-repeat rounded-[32px] relative z-[9]"
       style={{

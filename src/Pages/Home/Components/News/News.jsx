@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import NewsList from "./NewsList";
 import backgroundImage from "../../../../assets/news/Subtract.svg";
 import image1 from "../../../../assets/news/1.svg";
@@ -7,7 +7,25 @@ import image2 from "../../../../assets/news/2.svg";
 import image3 from "../../../../assets/news/3.svg";
 import { Link } from "react-router-dom";
 export default function News() {
-
+  useEffect(() => {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("animate-visible");
+              } else {
+                entry.target.classList.remove("animate-visible");
+              }
+            });
+          },
+          { threshold: 0.2 } // Trigger animation when 20% of the section is visible
+        );
+    
+        const sections = document.querySelectorAll(".animate-section");
+        sections.forEach((section) => observer.observe(section));
+    
+        return () => observer.disconnect(); // Cleanup
+      }, []);
     const newsData = [
     {
       title: "لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟",
@@ -37,7 +55,7 @@ export default function News() {
   ];
 
   return (
-    <div className="main-container  flex flex-col my-16 items-center gap-[4rem] w-full max-w-[1440px] bg-[#fff] relative overflow-hidden mx-auto px-4 sm:px-8">
+    <div id="news" className="main-container  flex flex-col my-16 items-center gap-[4rem] w-full max-w-[1440px] bg-[#fff] relative overflow-hidden mx-auto px-4 sm:px-8 animate-section opacity-0 transition-opacity duration-1000">
       {/* Header */}
       <div className="flex flex-col gap-4 items-center">
         <span className="text-[16px]  font-medium leading-[29.12px] text-[#0e4a79]">
