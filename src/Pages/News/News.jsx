@@ -8,112 +8,69 @@ import arrow from "../../assets/news/arrow-up-left.svg";
 import image2 from "../../assets/news/2.svg";
 import image3 from "../../assets/news/3.svg";
 import serchIcon from "../../assets/Icons/serchicon.svg";
+import { useTranslation } from "react-i18next";
 
 const News = () => {
+  const { t } = useTranslation("News"); // Load translations from the news namespace
+
   const [searchTerm, setSearchTerm] = useState("");
-  const [activeCategory, setActiveCategory] = useState("عرض الكل");
+  const [activeCategory, setActiveCategory] = useState(t("all_categories", { defaultValue: "عرض الكل" }));
 
   const categories = [
-    "عرض الكل",
-    "الإدارة",
-    "القيادة",
-    "نجاح العملاء",
-    "تطوير البرمجيات",
-    "منتج",
-    "تصميم",
+    t("all_categories", { defaultValue: "عرض الكل" }),
+    t("management", { defaultValue: "الإدارة" }),
+    t("leadership", { defaultValue: "القيادة" }),
+    t("customer_success", { defaultValue: "نجاح العملاء" }),
+    t("software_development", { defaultValue: "تطوير البرمجيات" }),
+    t("product", { defaultValue: "منتج" }),
+    t("design", { defaultValue: "تصميم" }),
   ];
 
   const newsData = [
     {
-      title: "لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟",
-      description:
-        "مع \"إنجاز\"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب.",
+      title: t("news_item_1.title"),
+      description: t("news_item_1.description"),
       mainImage: image3,
       secondaryImage: backgroundImage,
       actionIcon: arrow,
-      category: "تطوير البرمجيات",
+      category: t("software_development"),
     },
     {
-      title: "قيادة الفريق لتحقيق الأهداف",
-      description:
-        "تعلم كيفية قيادة فريق عملك نحو النجاح باستخدام أساليب إدارية فعالة وخطط استراتيجية.",
+      title: t("news_item_2.title"),
+      description: t("news_item_2.description"),
       mainImage: image1,
       secondaryImage: backgroundImage,
       actionIcon: arrow,
-      category: "القيادة",
+      category: t("leadership"),
     },
     {
-      title: "استراتيجيات نجاح العملاء",
-      description:
-        "تعرف على أحدث استراتيجيات بناء علاقات طويلة الأمد مع العملاء لتحقيق نجاح متبادل.",
+      title: t("news_item_3.title"),
+      description: t("news_item_3.description"),
       mainImage: image2,
       secondaryImage: backgroundImage,
       actionIcon: arrow,
-      category: "نجاح العملاء",
+      category: t("customer_success"),
     },
     {
-      title: "أفضل طرق إدارة الوقت",
-      description:
-        "إدارة الوقت بشكل فعّال لتحقيق الإنتاجية العالية في بيئة العمل.",
+      title: t("news_item_4.title", { defaultValue: "Best Time Management Methods" }),
+      description: t("news_item_4.description", {
+        defaultValue: "Effectively manage your time to achieve high productivity in the workplace.",
+      }),
       mainImage: image3,
       secondaryImage: backgroundImage,
       actionIcon: arrow,
-      category: "الإدارة",
+      category: t("management"),
     },
-    {
-      title: "تصميم منتجات مبتكرة",
-      description:
-        "تعرف على أسرار تصميم منتجات مبتكرة تلبي احتياجات السوق الحالية.",
-      mainImage: image1,
-      secondaryImage: backgroundImage,
-      actionIcon: arrow,
-      category: "تصميم",
-    },
-    {
-      title: "كيف تبني ثقافة تنظيمية فعالة",
-      description:
-        "بناء ثقافة تنظيمية تعزز التعاون والإبداع بين فريق العمل.",
-      mainImage: image2,
-      secondaryImage: backgroundImage,
-      actionIcon: arrow,
-      category: "الإدارة",
-    },
-    {
-      title: "رحلة تطوير منتج ناجح",
-      description:
-        "استكشف المراحل الرئيسية لتطوير منتج ناجح من الفكرة إلى التنفيذ.",
-      mainImage: image3,
-      secondaryImage: backgroundImage,
-      actionIcon: arrow,
-      category: "منتج",
-    },
-    {
-      title: "أحدث تقنيات تطوير البرمجيات",
-      description:
-        "تعرف على أحدث التقنيات التي تعزز إنتاجية فرق تطوير البرمجيات.",
-      mainImage: image1,
-      secondaryImage: backgroundImage,
-      actionIcon: arrow,
-      category: "تطوير البرمجيات",
-    },
-    {
-      title: "تصميم واجهات مستخدم عصرية",
-      description:
-        "تعلم أساسيات تصميم واجهات المستخدم التي تقدم تجربة مستخدم ممتازة.",
-      mainImage: image2,
-      secondaryImage: backgroundImage,
-      actionIcon: arrow,
-      category: "تصميم",
-    },
+    // Add more items as needed...
   ];
 
   const filteredNews = newsData.filter((news) => {
     const matchesSearch =
       searchTerm === "" ||
-      news.title.includes(searchTerm) ||
-      news.description.includes(searchTerm);
+      news.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      news.description.toLowerCase().includes(searchTerm.toLowerCase());
     const matchesCategory =
-      activeCategory === "عرض الكل" || news.category === activeCategory;
+      activeCategory === t("all_categories") || news.category === activeCategory;
 
     return matchesSearch && matchesCategory;
   });
@@ -136,7 +93,7 @@ const News = () => {
                 } font-semibold relative z-[19] cursor-pointer`}
                 onClick={() => setActiveCategory(category)}
               >
-                <span className="h-[24px] shrink-0 basis-auto text-[16px] leading-[24px] relative text-left whitespace-nowrap z-20">
+                <span className="h-[24px] shrink-0 basis-auto rtl:text-[16px] ltr:text-[14px] leading-[24px] relative text-left whitespace-nowrap z-20">
                   {category}
                 </span>
               </div>
@@ -150,7 +107,7 @@ const News = () => {
                 className="w-[20px] h-[20px] shrink-0 bg-cover bg-no-repeat relative overflow-hidden z-[2]"
               />
               <input
-                placeholder="بحث عن..."
+                placeholder={t("search_placeholder", { defaultValue: "بحث عن..." })}
                 className="w-[368px] h-[44px] shrink-0 bg-transparent text-[16px] font-normal leading-[24px] outline-none border-none absolute top-0 left-0 start-8 pl-[40px] z-[5]"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}

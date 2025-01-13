@@ -9,8 +9,11 @@ import image1 from "../../../../assets/reviews/rectangele.svg";
 import image2 from "../../../../assets/reviews/Subtract.svg";
 import arrowLeft from "../../../../assets/reviews/arrow-left-01.svg";
 import star from "../../../../assets/reviews/star.svg";
+import { useTranslation } from "react-i18next";
 
 const CustomersReviews = () => {
+  const { t } = useTranslation("Reviews"); // Use Reviews namespace
+
     useEffect(() => {
           const observer = new IntersectionObserver(
             (entries) => {
@@ -37,16 +40,17 @@ const CustomersReviews = () => {
       {/* Header */}
       <div className="flex flex-col gap-5 items-center relative  mt-16 sm:mt-[64px] mx-auto w-[512px] text-center">
         <span className="text-sm sm:text-base font-medium leading-[29px] text-[#0e4a79]">
-          آراء عملائنا
+        {t("customer_reviews")}
         </span>
         <span className="text-lg sm:text-2xl font-semibold leading-[58px] text-[#0e4a79]">
-          ما الذي يقوله شركاؤنا عن خدماتنا؟
+        {t("what_customers_say")}
         </span>
       </div>
 
       {/* Reviews Section Slider */}
       <div className="relative mt-12 mx-auto flex justify-center">
         <Swiper
+        dir="rtl"
           spaceBetween={105}
           slidesPerView={3}
           centeredSlides={true}
@@ -81,14 +85,12 @@ const CustomersReviews = () => {
               >
                 <div className="main-container flex w-[287px] flex-col gap-[19px] flex-nowrap relative mx-auto my-0 py-5">
                   <span className="flex w-[212px] h-[50px] justify-end items-start shrink-0 text-[14px] font-semibold leading-[25.48px] text-[#667680] relative text-right">
-                    لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟
+                  {t("title")}
                   </span>
                   <div className="w-[21.828px] h-[1.364px] shrink-0 bg-cover bg-no-repeat relative z-[1]" />
                   <span className="flex w-[287px] h-[80px] justify-end items-start self-stretch shrink-0 text-[10px] font-normal leading-[20px] text-[#667680] relative text-right z-[2]">
-                    مع "إنجاز"، تحصل على شريك يقدم حلولًا متكاملة للموارد
-                    البشرية بخبرة معتمدة ومرونة عالية. خدماتنا تشمل التوظيف،
-                    التدريب، والاستشارات باستخدام أحدث التقنيات لدعم أهدافك
-                    وتحقيق رؤية المملكة 2030 من{" "}
+                  {t("description")}
+
                   </span>
                   <div className="flex justify-between items-center self-stretch shrink-0 flex-nowrap relative z-[3]">
                     <div className="flex w-[119px] flex-col shrink-0 flex-nowrap relative z-[12]">
@@ -97,13 +99,13 @@ const CustomersReviews = () => {
                         className="flex gap-[8px] items-center flex-row-reverse self-stretch shrink-0 flex-nowrap relative z-[13]"
                       >
                         <span className="flex w-[61px] h-[20px] items-start shrink-0 basis-auto text-[12px] font-medium leading-[20px] text-[#667680] relative text-right whitespace-nowrap z-[14]">
-                          علي السيد
+                        {t("customer_name")}
                         </span>
                         <div className="w-[10px] h-[10px] shrink-0 bg-[#667680] rounded-tl-none rounded-tr-[8px] rounded-br-none rounded-bl-none relative z-[15]" />
                       </div>
                       <div className="flex pt-0 pr-[18px] pb-0 pl-0 gap-[8px] justify-center items-center self-stretch shrink-0 flex-nowrap relative z-[16]">
                         <span className="flex w-[101px] h-[20px] justify-end items-start shrink-0 basis-auto text-[10px] font-normal leading-[20px] text-[#667680] relative text-right whitespace-nowrap z-[17]">
-                          مصمم تجربة مستخدم
+                        {t("customer_job_title")}
                         </span>
                       </div>
                     </div>

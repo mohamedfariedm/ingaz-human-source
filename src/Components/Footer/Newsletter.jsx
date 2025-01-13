@@ -6,8 +6,11 @@ import linkedin from "../../assets/footer/linkedin-02.svg";
 import twitter from "../../assets/footer/new-twitter.svg";
 import snap from "../../assets/footer/snapchat.svg";
 import whatsapp from "../../assets/footer/whatsapp.svg";
+import { useTranslation } from "react-i18next";
 
 const Newsletter = () => {
+  const { t } = useTranslation("Footer");
+
   // Array of social media icons and their alt text
   const socialIcons = [
     { src: snap, alt: "Snapchat" },
@@ -23,11 +26,10 @@ const Newsletter = () => {
       <div className="flex flex-col gap-6 sm:gap-8">
         <div className="flex flex-col gap-2 sm:gap-3">
           <span className="text-[20px] leading-[33.6px] sm:text-[24px] font-semibold text-[#1d1d1d]">
-            النشرة الإخبارية
+          {t("footer.newsletter_title")}
           </span>
           <span className="text-[12px] sm:text-[14px] text-[#667680] leading-[21px]">
-            احصل على آخر التحديثات حول ميزات ايطار الجديدة وتحديثات المنتجات
-            الجديدة.
+          {t("footer.newsletter_description")}
           </span>
         </div>
         <div className="flex gap-4 items-start">
@@ -42,12 +44,12 @@ const Newsletter = () => {
             </div>
             <input
               className="absolute inset-0 w-full h-full  font-semibold leading-[21px] heig bg-transparent border-none outline-none text-[12px] sm:text-[14px] placeholder-[#667680] p-5"
-              placeholder="ادخل البريد الالكترونى"
+              placeholder={t("footer.email_placeholder")}
             />
           </div>
           {/* Subscribe Button */}
           <button className="w-[80px] sm:w-[99px] h-[40px] sm:h-[45px] flex items-center justify-center bg-[#0e4a79] rounded-[12px] text-white shadow-md">
-            اشترك الان
+          {t("footer.subscribe_now")}
           </button>
         </div>
       </div>

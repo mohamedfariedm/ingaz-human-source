@@ -2,8 +2,11 @@ import HelmetInfo from "Components/HelmetInfo/HelmetInfo";
 import BreadCrumb from "Components/BreadCrumb/BreadCrumb";
 import singleImage from "../../assets/news/rectangle.svg";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const Stats = () => {
+  const { t } = useTranslation("news"); // Use the "news" namespace for translations
+
   useEffect(() => {
               const observer = new IntersectionObserver(
                 (entries) => {

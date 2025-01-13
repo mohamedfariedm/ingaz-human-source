@@ -1,13 +1,16 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const FooterLinks = () => {
   // Define links with names and URLs
+  const { t } = useTranslation("Footer");
+
   const links = [
-    { name: "شروط الاستخدام", url: "/terms" },
-    { name: "سياسة الخصوصية", url: "/privacy" },
-    { name: "معلومات عنا", url: "/aboutus" },
-    { name: "تواصل معنا", url: "/contactus" },
+    { name: t("footer.terms_of_use"), url: "/terms" },
+    { name: t("footer.privacy_policy"), url: "/privacy" },
+    { name: t("footer.about_us"), url: "/aboutus" },
+    { name: t("footer.contact_us"), url: "/contactus" },
   ];
 
   return (
@@ -27,8 +30,8 @@ const FooterLinks = () => {
 
       {/* Footer Copyright */}
       <span className="text-[#667680] text-[12px] sm:text-[14px] text-center sm:text-right">
-        2025 ©, جميع الحقوق محفوظة لشركة انجاز للموارد البشرية
-      </span>
+      {t("footer.copyright")}
+            </span>
     </div>
   );
 };

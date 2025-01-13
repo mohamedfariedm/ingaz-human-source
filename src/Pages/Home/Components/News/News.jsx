@@ -6,7 +6,10 @@ import arrow from "../../../../assets/news/arrow-up-left.svg";
 import image2 from "../../../../assets/news/2.svg";
 import image3 from "../../../../assets/news/3.svg";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 export default function News() {
+  const { t } = useTranslation("News"); // Use News namespace
+
   useEffect(() => {
         const observer = new IntersectionObserver(
           (entries) => {
@@ -26,43 +29,40 @@ export default function News() {
     
         return () => observer.disconnect(); // Cleanup
       }, []);
-    const newsData = [
-    {
-      title: "لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟",
-      description:
-        "مع \"إنجاز\"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب.",
-      mainImage: image3, // Replace with actual image
-      secondaryImage: backgroundImage, // Replace with actual image
-      actionIcon: arrow, // Replace with actual icon
-    },
-    {
-      title: "لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟",
-      description:
-        "مع \"إنجاز\"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب.",
-      mainImage: image1, // Replace with actual image
-      secondaryImage: backgroundImage, // Replace with actual image
-      actionIcon: arrow, // Replace with actual icon
-    },
-    {
-      title: "لماذا إنجاز هو خيارك الأفضل للموارد البشرية؟",
-      description:
-        "مع \"إنجاز\"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب.",
-      mainImage: image2, // Replace with actual image
-      secondaryImage: backgroundImage, // Replace with actual image
-      actionIcon: arrow, // Replace with actual icon
-    },
-    // Add more news items here
-  ];
+      const newsData = [
+        {
+          title: t("news_item_1.title"),
+          description: t("news_item_1.description"),
+          mainImage: image3,
+          secondaryImage: backgroundImage,
+          actionIcon: arrow,
+        },
+        {
+          title: t("news_item_2.title"),
+          description: t("news_item_2.description"),
+          mainImage: image1,
+          secondaryImage: backgroundImage,
+          actionIcon: arrow,
+        },
+        {
+          title: t("news_item_3.title"),
+          description: t("news_item_3.description"),
+          mainImage: image2,
+          secondaryImage: backgroundImage,
+          actionIcon: arrow,
+        },
+        // Add more news items here
+      ];
 
   return (
     <div id="news" className="main-container  flex flex-col my-16 items-center gap-[4rem] w-full max-w-[1440px] bg-[#fff] relative overflow-hidden mx-auto px-4 sm:px-8 animate-section opacity-0 transition-opacity duration-1000">
       {/* Header */}
       <div className="flex flex-col gap-4 items-center">
         <span className="text-[16px]  font-medium leading-[29.12px] text-[#0e4a79]">
-          آخر أخبارنا
+        {t("latest_news")}
         </span>
         <span className="text-[32px]  font-extrabold leading-[58px] text-[#0e4a79] text-center">
-          كن على اطلاع دائم مع إنجاز!
+        {t("stay_updated")}
         </span>
       </div>
 
@@ -74,7 +74,7 @@ export default function News() {
   <Link to={"/news"} className="flex items-center justify-center relative ">
     {/* Text */}
     <span className="text-[14px] font-normal text-[#0e4a79] ml-2">
-      تصفح جميع الاخبار
+    {t("browse_all_news")}
     </span>
 
     {/* SVG Container */}

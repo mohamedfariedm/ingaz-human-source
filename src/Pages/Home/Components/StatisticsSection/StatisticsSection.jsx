@@ -1,15 +1,18 @@
 import React, { useEffect, useState, useRef } from "react";
 import StatCard from "./StatCard";
 import "./StatisticsSection.css";
+import { useTranslation } from "react-i18next";
 
 const stats = [
-  { number: 450, label: "عميل" },
-  { number: 6000, label: "وظيفة" },
-  { number: 200, label: "دورة تدريبية" },
-  { number: 96, label: "خدمة عملاء" },
+  { number: 450, labelKey: "clients" },
+  { number: 6000, labelKey: "jobs" },
+  { number: 200, labelKey: "training_courses" },
+  { number: 96, labelKey: "customer_service" },
 ];
 
 export default function StatisticsSection() {
+  const { t } = useTranslation("Statistics"); // Use Statistics namespace
+
   const [visible, setVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -41,13 +44,11 @@ export default function StatisticsSection() {
     >
       <div className="w-full xl:w-[760px] flex flex-col items-center mx-auto gap-[3rem]">
         <h2 className="text-[32px] font-semibold leading-[58px] text-[#0e4a79]">
-          إنجاز في أرقام
+        {t("title")}
         </h2>
         <p className="text-[16px] font-medium leading-[29px] text-[#667680] text-center">
-          مع "إنجاز"، تحصل على شريك يقدم حلولًا متكاملة للموارد البشرية بخبرة
-          معتمدة ومرونة عالية. خدماتنا تشمل التوظيف، التدريب، والاستشارات
-          باستخدام أحدث التقنيات لدعم أهدافك وتحقيق رؤية المملكة 2030 من خلال
-          تمكين الكوادر الوطنية وبناء شراكات استراتيجية.
+        {t("description")}
+
         </p>
       </div>
       <div className="h-[637px] relative stats-container">
@@ -57,7 +58,7 @@ export default function StatisticsSection() {
             <StatCard
               key={index}
               number={visible ? stat.number : 0} // Reset and reanimate when visible
-              label={stat.label}
+              label={t(`stats.${stat.labelKey}`)} // Translate the label dynamically
             />
           ))}
         </div>

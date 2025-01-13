@@ -96,7 +96,7 @@ const Services = () => {
           : "bg-transparent text-[#667680]"
       }`}
     >
-      <span className="flex w-[35px] h-[19px] justify-end items-start shrink-0 basis-auto text-[12px] font-medium leading-[19px] relative text-right whitespace-nowrap z-[1]">
+      <span className="flex w-[35px] h-[19px] rtl:justify-end ltr:justify-center items-start shrink-0 basis-auto text-[12px] font-medium leading-[19px] relative text-right whitespace-nowrap z-[1]">
       {t("individual")}
       </span>
     </div>

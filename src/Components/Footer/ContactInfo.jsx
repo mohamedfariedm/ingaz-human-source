@@ -2,8 +2,11 @@ import React from "react";
 import logo from "../../assets/logo.svg";
 import call from "../../assets/footer/call.svg";
 import mail from "../../assets/footer/mail-01.svg";
+import { useTranslation } from "react-i18next";
 
 const ContactInfo = () => {
+  const { t } = useTranslation("Footer"); // Import the translation function
+
   return (
     <div className="flex flex-col gap-[24px] sm:gap-[48px] w-full max-w-[513px] justify-center items-center sm:items-start sm:justify-start px-4 sm:px-0">
       {/* Logo and Description */}
@@ -12,25 +15,25 @@ const ContactInfo = () => {
           className="w-[120px] h-[30px] sm:w-[210px] sm:h-[54px] bg-cover bg-no-repeat"
           style={{ backgroundImage: `url(${logo})` }}
         />
-        <span className="text-[#667680] text-[12px] sm:text-[14px] leading-5 sm:leading-6 text-center sm:text-right">
-          انطلق نحو تحقيق أهدافك مع "إنجاز"، الشركة السعودية الرائدة في تقديم حلول
-          الموارد البشرية المتكاملة.
+        <span className="text-[#667680] text-[12px] sm:text-[14px] leading-5 sm:leading-6 text-center sm:rtl:text-right sm:ltr:text-left">
+        {t("footer.description")}
+
         </span>
       </div>
 
       {/* Contact Information */}
       <div className="flex flex-col gap-[16px] items-center sm:items-stretch">
         <span className="text-[14px] sm:text-[16px] font-semibold text-[#111317]">
-          لديك استفسار؟
+        {t("footer.question")}
         </span>
         <div className="flex flex-wrap gap-[16px] sm:gap-[56px] justify-center sm:justify-start">
           <ContactItem
-            label="اتصل بنا على"
+           label={t("footer.call_us")}
             value="+966 920020077"
             icon={call} // Call Icon
           />
           <ContactItem
-            label="راسلنا على"
+         label={t("footer.email_us")}
             value="info@enjaz.com.sa"
             icon={mail} // Email Icon
           />

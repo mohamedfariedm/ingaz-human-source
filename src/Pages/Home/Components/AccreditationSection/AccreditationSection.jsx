@@ -10,7 +10,9 @@ import image7 from "../../../../assets/assosiates/1.svg";
 import image8 from "../../../../assets/assosiates/2.svg";
 import image9 from "../../../../assets/assosiates/3.svg";
 import image10 from "../../../../assets/assosiates/7.svg";
+import { useTranslation } from "react-i18next";
 export default function AccreditationSection() {
+  const { t } = useTranslation("Accreditation"); // Use Accreditation namespace
 
      useEffect(() => {
             const observer = new IntersectionObserver(
@@ -35,11 +37,11 @@ export default function AccreditationSection() {
     <div id="accreditations" className="main-container w-full xl:w-[1440px] xl:h-[793px] bg-[#fff] relative overflow-hidden mx-auto my-0 animate-section opacity-0 transition-opacity duration-1000">
       <div className="flex xl:w-[550px] flex-col gap-[20px] items-center flex-nowrap relative z-[22] mt-[64px] mx-auto">
       <span className="xl:h-[29px]  text-[16px] font-medium leading-[29px] text-[#0e4a79] text-center">
-          الاعتمادات
-        </span>
+      {t("sub_title")}
+              </span>
         <span className="xl:w-[550px] xl:h-[58px]  text-[32px] font-semibold leading-[58px] text-[#0e4a79]  text-center">
-          مؤسسات معترف بها اعتمدت خدماتنا
-        </span>
+        {t("title")}
+                </span>
       </div>
 
       <div className=" max-w-[1061px] flex flex-col items-center justify-center gap-10  xl:h-[436px] relative z-20 mt-[87px] mx-auto">

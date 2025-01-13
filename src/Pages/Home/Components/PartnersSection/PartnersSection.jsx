@@ -15,8 +15,10 @@ import image13 from "../../../../assets/partners/25.svg";
 import image14 from "../../../../assets/partners/26.svg";
 import image15 from "../../../../assets/partners/27.svg";
 import image16 from "../../../../assets/partners/35.svg";
+import { useTranslation } from "react-i18next";
 
 export default function PartnersSection() {
+  const { t } = useTranslation("Partners"); // Use Partners namespace
 
     useEffect(() => {
           const observer = new IntersectionObserver(
@@ -46,10 +48,10 @@ export default function PartnersSection() {
       {/* Title Section */}
       <div className="flex  flex-col gap-[20px] items-center flex-nowrap relative z-[41] mt-[64px] mx-auto">
         <span className="h-[29px] text-[16px] font-medium leading-[29px] text-[#0e4a79] text-center">
-          شركاؤنا في النجاح
+        {t("sub_title")}
         </span>
         <span className=" h-[58px] text-[32px] font-semibold leading-[58px] text-[#0e4a79] text-center">
-          نفخر بشراكتنا مع الأفضل
+        {t("title")}
         </span>
       </div>
 

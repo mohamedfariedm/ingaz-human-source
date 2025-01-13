@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 
 const NewsCard = ({ title, description, mainImage, actionIcon, onClick }) => {
+    const { t } = useTranslation("News"); // Use News namespace
+  
   const [isHovered, setIsHovered] = useState(false);
 
   const handleMouseEnter = () => setIsHovered(true);
@@ -49,7 +52,7 @@ const NewsCard = ({ title, description, mainImage, actionIcon, onClick }) => {
         }}
       />
 
-      <div className="w-[368px] h-[225px] absolute top-[258px] left-0">
+      <div className="w-[368px] h-[225px] absolute top-[258px] rtl:left-0 ltr:rotate-y-180">
         <svg
           width="368"
           height="225"
@@ -67,7 +70,7 @@ const NewsCard = ({ title, description, mainImage, actionIcon, onClick }) => {
       </div>
 
       {/* Action Icon */}
-      <div className="flex items-center justify-center w-[64px] h-[64px] bg-[#f1f8fd] group-hover:bg-primary rounded-full absolute top-[419px] left-0 z-10 transition-colors">
+      <div className="flex items-center justify-center w-[64px] h-[64px] bg-[#f1f8fd] group-hover:bg-primary rounded-full absolute top-[419px] rtl:left-0 ltr:right-0 z-10 transition-colors">
         <div
           className={`w-[32px] h-[32px] ${
             isHovered ? "animate-rocket" : "animate-rocket-reverse"
@@ -100,10 +103,10 @@ const NewsCard = ({ title, description, mainImage, actionIcon, onClick }) => {
       {/* View More Link */}
       <span
         onClick={onClick}
-        className="absolute top-[432px] right-[16px] text-[16px] font-normal text-[#667680] group-hover:text-white cursor-pointer group-hover:underline transition-colors"
+        className="absolute top-[432px] rtl:right-[16px] ltr:left-[16px] text-[16px] font-normal text-[#667680] group-hover:text-white cursor-pointer group-hover:underline transition-colors"
       >
-        عـرض الـمـزيـد
-      </span>
+        {t("view_more")}
+        </span>
     </Link>
   );
 };
