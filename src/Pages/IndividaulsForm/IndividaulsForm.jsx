@@ -4,24 +4,39 @@ import * as Yup from "yup";
 import HelmetInfo from "Components/HelmetInfo/HelmetInfo";
 import BreadCrumb from "Components/BreadCrumb/BreadCrumb";
 import cloud from "../../assets/cloud-upload.svg";
+import { useTranslation } from "react-i18next";
 
-// Validation schema for the form
-const validationSchema = Yup.object({
-  citizenship: Yup.string().required("يرجى تحديد الجنسية"),
-  jobTitle: Yup.string().required("المسمى الوظيفي مطلوب"),
-  contactPeriod: Yup.string().required("فترة التواصل مطلوبة"),
-  experience: Yup.string().required("فترة الخبرة مطلوبة"),
-  email: Yup.string()
-    .email("يرجى إدخال بريد إلكتروني صالح")
-    .required("البريد الإلكتروني مطلوب"),
-  name: Yup.string().required("الاسم الشركة مطلوب"),
-  cv: Yup.mixed().required("يرجى إرفاق السيرة الذاتية"),
-});
+// // Validation schema for the form
+// const validationSchema = Yup.object({
+//   citizenship: Yup.string().required("يرجى تحديد الجنسية"),
+//   jobTitle: Yup.string().required("المسمى الوظيفي مطلوب"),
+//   contactPeriod: Yup.string().required("فترة التواصل مطلوبة"),
+//   experience: Yup.string().required("فترة الخبرة مطلوبة"),
+//   email: Yup.string()
+//     .email("يرجى إدخال بريد إلكتروني صالح")
+//     .required("البريد الإلكتروني مطلوب"),
+//   name: Yup.string().required("الاسم الشركة مطلوب"),
+//   cv: Yup.mixed().required("يرجى إرفاق السيرة الذاتية"),
+// });
 
 const IndividaulsForm = () => {
+  const { t } = useTranslation("individualForm"); // Translation namespace
+
+  const validationSchema = Yup.object({
+    citizenship: Yup.string().required(t("validation.citizenship")),
+    jobTitle: Yup.string().required(t("validation.jobTitle")),
+    contactPeriod: Yup.string().required(t("validation.contactPeriod")),
+    experience: Yup.string().required(t("validation.experience")),
+    email: Yup.string()
+      .email(t("validation.emailInvalid"))
+      .required(t("validation.email")),
+    name: Yup.string().required(t("validation.name")),
+    cv: Yup.mixed().required(t("validation.cv")),
+  });
+
   const handleSubmit = (values, { resetForm }) => {
     console.log("Form Submitted:", values);
-    alert("تم إرسال البيانات بنجاح");
+    alert(t("alert.success"));
     resetForm();
   };
 
@@ -30,15 +45,15 @@ const IndividaulsForm = () => {
       <HelmetInfo titlePage={"شروط الاستخدام"} />
       <div className="main-container flex xl:w-[1152px] flex-col gap-[55px] my-[164px] items-center flex-nowrap relative mx-auto px-5 xl:px-0">
         <div className="flex xl:w-[662px] flex-col gap-[64px] items-center shrink-0 flex-nowrap relative">
-          <BreadCrumb name={"تسجيل فى خدمات الافراد"} />
-          <div className="flex flex-col gap-[64px] items-center self-stretch shrink-0 flex-nowrap relative z-[6]">
+        <BreadCrumb name={t("breadcrumb.name")} />
+        <div className="flex flex-col gap-[64px] items-center self-stretch shrink-0 flex-nowrap relative z-[6]">
             <div className="flex flex-col gap-[32px] items-center self-stretch shrink-0 flex-nowrap relative z-[7]">
               <span className="flex  xl:h-[58px] items-center shrink-0 basis-auto text-[32px] font-semibold leading-[58px] text-[#0e4a79] relative text-center z-[7]">
-                سجّل الآن في خدمة الافراد
+              {t("form.title")}
               </span>
               <span className="xl:h-[32px] self-stretch shrink-0 basis-auto text-[16px] font-normal leading-[32px] text-[#667680] relative text-center z-[8]">
-                انضم إلى شبكتنا واستفد من حلولنا المصممة خصيصًا لتلبية احتياجات
-                أعمالك
+              {t("form.subtitle")}
+
               </span>
             </div>
           </div>
@@ -71,8 +86,8 @@ const IndividaulsForm = () => {
                     } rounded-[99px] border-none relative z-[3] pointer`}
                     onClick={() => setFieldValue("citizenship", "سعودي")}
                   >
-                    سعودي
-                  </button>
+                    {t("citizenship.saudi")}
+                    </button>
                   <button
                     type="button"
                     className={`flex pt-[8px] pr-[16px] pb-[8px] pl-[16px] gap-[8px] justify-center items-center grow shrink-0 basis-0 flex-nowrap ${
@@ -82,8 +97,8 @@ const IndividaulsForm = () => {
                     } rounded-[99px] border-none relative z-[3] pointer`}
                     onClick={() => setFieldValue("citizenship", "غير سعودي")}
                   >
-                    غير سعودي
-                  </button>
+                    {t("citizenship.nonSaudi")}
+                    </button>
                 
                 </div>
                 <ErrorMessage
@@ -97,11 +112,11 @@ const IndividaulsForm = () => {
                 {/* Name Field */}
                 <div className="flex w-full  xl:w-[270px] flex-col gap-[8px]">
                   <label className="text-[#667680] text-[14px] font-medium">
-                    الاسم
+                  {t("fields.name")}
                   </label>
                   <Field
                     name="name"
-                    placeholder="اسم الشركة"
+                    placeholder={t("fields.namePlaceholder")}
                     className="flex h-[56px] justify-center items-center self-stretch shrink-0 flex-nowrap bg-[#f4f4f4] rounded-[999px] border-none px-[16px] text-right"
                   />
                   <ErrorMessage
@@ -113,11 +128,11 @@ const IndividaulsForm = () => {
                 
                 <div className="flex w-full  xl:w-[270px] flex-col gap-[8px]">
                   <label className="text-[#667680] text-[14px] font-medium">
-                    المسمى الوظيفي
+                  {t("fields.jobTitle")}
                   </label>
                   <Field
                     name="jobTitle"
-                    placeholder="المسمى الوظيفي"
+                    placeholder={t("fields.jobTitlePlaceholder")}
                     className="flex h-[56px] justify-center items-center self-stretch shrink-0 flex-nowrap bg-[#f4f4f4] rounded-[999px] border-none px-[16px] text-right"
                   />
                   <ErrorMessage
@@ -132,14 +147,13 @@ const IndividaulsForm = () => {
 
 
                 <div className="flex w-full flex-col md:flex-row  xl:w-[564px]  gap-[8px]">
-                {/* Name Field */}
                 <div className="flex w-full  xl:w-[270px] flex-col gap-[8px]">
                   <label className="text-[#667680] text-[14px] font-medium">
-                    مدة الخبرة
+                  {t("fields.experience")}
                   </label>
                   <Field
                     name="experience"
-                    placeholder="مدة الخبرة"
+                    placeholder={t("fields.experience")}
                     className="flex h-[56px] justify-center items-center self-stretch shrink-0 flex-nowrap bg-[#f4f4f4] rounded-[999px] border-none px-[16px] text-right"
                   />
                   <ErrorMessage
@@ -152,11 +166,11 @@ const IndividaulsForm = () => {
                 {/* Contact Period Field */}
                 <div className="flex w-full  xl:w-[270px] flex-col gap-[8px]">
                   <label className="text-[#667680] text-[14px] font-medium">
-                    فترة التواصل
+                    {t("fields.contactPeriod")}
                   </label>
                   <Field
                     name="contactPeriod"
-                    placeholder="مثال: صباحي"
+                    placeholder={t("fields.contactPeriod")}
                     className="flex h-[56px] justify-center items-center self-stretch shrink-0 flex-nowrap bg-[#f4f4f4] rounded-[999px] border-none px-[16px] text-right"
                   />
                   <ErrorMessage
@@ -172,11 +186,11 @@ const IndividaulsForm = () => {
                 {/* Email Field */}
                 <div className="flex w-full  xl:w-[564px] flex-col gap-[8px]">
                   <label className="text-[#667680] text-[14px] font-medium">
-                    البريد الإلكتروني
+                    {t("fields.email")}
                   </label>
                   <Field
                     name="email"
-                    placeholder="example@email.com"
+                    placeholder={t("fields.emailPlaceholder")}
                     className="flex h-[56px] justify-center items-center self-stretch shrink-0 flex-nowrap bg-[#f4f4f4] rounded-[999px] border-none px-[16px] text-right"
                   />
                   <ErrorMessage
@@ -193,7 +207,7 @@ const IndividaulsForm = () => {
       *
     </span>
     <span className="h-[20px] shrink-0 basis-auto  text-[14px] font-medium leading-[20px] text-[#667680] relative text-left whitespace-nowrap z-[2]">
-      إرفاق السيرة الذاتية
+      {t("fields.cv")}
     </span>
   </div>
   <div className="flex flex-col gap-[16px] items-start self-stretch shrink-0 flex-nowrap relative z-[3]">
@@ -207,13 +221,13 @@ const IndividaulsForm = () => {
         </div>
         <div className="flex flex-col gap-[8px] items-center self-stretch shrink-0 flex-nowrap relative z-[8]">
           <div className="flex gap-[4px] justify-center items-start self-stretch shrink-0 flex-nowrap relative z-[9]">
-            <div className="flex xl:w-[89px] gap-[6px] justify-center items-center shrink-0 flex-nowrap relative overflow-hidden z-[11]">
+            <div className="flex rtl:xl:w-[89px] gap-[6px] justify-center items-center shrink-0 flex-nowrap relative overflow-hidden z-[11]">
               <label
                 htmlFor="cvUpload"
                 className="h-[20px] shrink-0 basis-auto  text-[14px] font-semibold leading-[20px] text-[#0e4a79] relative text-left whitespace-nowrap z-[12] pointer"
               >
-                اضغط لتحميل
-              </label>
+        {t("fields.cvl.label")}
+        </label>
               <input
                 id="cvUpload"
                 type="file"
@@ -225,11 +239,11 @@ const IndividaulsForm = () => {
               />
             </div>
             <span className="h-[20px] shrink-0 basis-auto  text-[14px] font-normal leading-[20px] text-[#667680] relative text-left xl:whitespace-nowrap z-10">
-              أو السحب والإفلات
+            {t("fields.cvl.dragAndDrop")}
             </span>
           </div>
           <span className="h-[18px] self-stretch shrink-0 basis-auto  text-[12px] font-normal leading-[18px] text-[#667680] relative text-center xl:whitespace-nowrap z-[13]">
-            PNG, JPG or PDF (max. 800x400px)
+          {t("fields.cvl.note")}
           </span>
         </div>
       </div>
@@ -250,7 +264,7 @@ const IndividaulsForm = () => {
                   className="flex h-[56px] pt-[12px] pr-[49px] pb-[12px] pl-[49px] gap-[8px] justify-center items-center self-stretch shrink-0 flex-nowrap bg-[#0e4a79] rounded-[999px] border-none relative overflow-hidden z-[60] pointer"
                 >
                   <span className="flex  xl:w-[43px] h-[29px] justify-center items-start shrink-0 basis-auto text-[16px] font-medium leading-[29px] text-[#fff] relative text-center whitespace-nowrap z-[61]">
-                    إرسال
+                  {t("form.submit")}
                   </span>
                 </button>
               </div>

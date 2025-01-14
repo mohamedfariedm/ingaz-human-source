@@ -1,0 +1,42 @@
+{
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "message": "Message"
+    },
+    "placeholders": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "you@company.com",
+      "phone": "+966 5XXXXXXXX",
+      "message": "Leave us a message..."
+    },
+    "buttons": {
+      "submit": "Submit"
+    },
+    "validation": {
+      "firstName": "First Name is required",
+      "lastName": "Last Name is required",
+      "email": "Please enter a valid email address",
+      "emailInvalid": "Please enter a valid email address",
+      "phone": "Phone number is required",
+      "phoneInvalid": "Please enter a valid Saudi phone number (starting with +966 or 05)",
+      "message": "Message is required"
+    },
+    "toast": {
+      "success": "Message sent successfully!",
+      "error": "An error occurred while sending. Please try again."
+    },
+    "leftPart": {
+    "phoneTitle": "Phone Contact",
+    "phoneDescription": "Working hours: Sunday to Thursday, 9 AM to 5 PM.",
+    "emailTitle": "Email",
+    "emailLine1": "Response within 24 hours.",
+    "emailLine2": "Feel free to email us"
+  },
+  "contact":"Contact Us"
+
+  }
+  

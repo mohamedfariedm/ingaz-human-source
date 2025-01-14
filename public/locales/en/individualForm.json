@@ -1,0 +1,50 @@
+{
+    "helmet": {
+      "title": "Terms of Use"
+    },
+    "breadcrumb": {
+      "name": "Register for Individual Services"
+    },
+    "form": {
+      "title": "Register Now for Individual Services",
+      "subtitle": "Join our network and benefit from our tailored solutions to meet your needs",
+      "submit": "Submit"
+    },
+    "citizenship": {
+      "saudi": "Saudi",
+      "nonSaudi": "Non-Saudi"
+    },
+    "fields": {
+      "name": "Name",
+      "namePlaceholder": "Company Name",
+      "jobTitle": "Job Title",
+      "jobTitlePlaceholder": "Job Title",
+      "contactPeriod": "Contact Period",
+      "contactPeriodPlaceholder": "Example: Morning",
+      "experience": "Experience Duration",
+      "experiencePlaceholder": "Experience Duration",
+      "email": "Email",
+      "emailPlaceholder": "example@email.com",
+      "cv": "Attach CV",
+      "cvl": {
+      "label": "Click to Upload",
+      "dragAndDrop": "or drag and drop",
+      "note": "PNG, JPG, or PDF (max. 800x400px)"
+    }
+    },
+    "validation": {
+      "citizenship": "Please select citizenship",
+      "jobTitle": "Job title is required",
+      "contactPeriod": "Contact period is required",
+      "experience": "Experience duration is required",
+      "email": "Email is required",
+      "emailInvalid": "Please enter a valid email",
+      "name": "Name is required",
+      "cv": "Please attach your CV"
+      
+    },
+    "alert": {
+      "success": "Data submitted successfully"
+    }
+  }
+  

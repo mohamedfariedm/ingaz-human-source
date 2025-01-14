@@ -3,9 +3,10 @@
     "stay_updated": "Stay updated with Enjaz!",
     "browse_all_news": "Browse all news",
     "news_details": "News Details",
+    "all_news": " All news",
     "news_item_1": {
-      "title": "The Journey of Excellence in Providing Workforce Solutions for Individuals and Businesses in the Kingdom",
-      "description": "Since its establishment in 2015, Enjaz Recruitment Company has become one of the leading companies of the Enjaz Group, offering comprehensive and integrated solutions in the recruitment of domestic and professional workers from various nationalities.",
+      "title": "Why is Enjaz your best choice for HR?",
+      "description": "With Enjaz, you get a partner that provides integrated HR solutions with certified expertise and high flexibility. Our services include recruitment and training.",
       "full_description": "Enjaz United Training Center is a leader in corporate training..."
     },
     "news_item_2": {
@@ -28,7 +29,12 @@
     "news_item_4": {
       "title": "Best Time Management Methods",
       "description": "Effectively manage your time to achieve high productivity in the workplace."
-    }
+    },
+    "news_details_title": "News Details",
+    "news_details_breadcrumb": "News Details",
+    "news_details_heading": "The journey of excellence in providing human resources to meet individual and business needs in the Kingdom",
+    "news_details_subheading": "Since its establishment in 2015, Enjaz Recruitment Company has become one of the most prominent...",
+    "news_details_content": "Enjaz United Training Center is a leader in corporate training and educational technology in the Middle East region, offering the most comprehensive solutions for developing learning and training across all strategic corporate functions, including human resources, digital resources, and professional and specialized courses in all fields. Through trainer-led sessions, in-company training, coaching, and the latest technological solutions across the Middle East, we provide our esteemed clients with a wide range of services, including training needs analysis, competency development and evaluation, and e-learning solutions tailored to the needs of specific industries and knowledge areas. We offer best practices for business improvement solutions, implementing processes, technologies, and organizational enhancements. We carefully select our consultants to deliver the highest quality of expertise and extensive experience in industry practices. Our consultants have a proven track record in executing major consultancy projects involving organizational and multi-geographical deployments and continuous process improvement advisory roles. Our mission at Enjaz United Training Center is to enhance the global competitiveness of our clients through continuous learning while striving to achieve our vision of becoming the best corporate and technical training center in Saudi Arabia and the Middle East. Our vision: Believing in the importance of investing in the development and building of human resources, we provide you with the best technologies and solutions in the field of training and consultancy. We work according to the latest global standards for improving corporate performance, constantly striving to equip our partners with the latest innovations and practices to achieve desired objectives."
 
   }
   

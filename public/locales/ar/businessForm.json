@@ -1,0 +1,48 @@
+{
+    "helmet": {
+      "title": "شروط الاستخدام"
+    },
+    "breadcrumb": {
+      "name": "اسم الخدمة المختارة"
+    },
+    "form": {
+      "title": "سجّل الآن في خدمة الاعمال",
+      "subtitle": "انضم إلى شبكتنا واستفد من حلولنا المصممة خصيصًا لتلبية احتياجات أعمالك",
+      "submit": "إرسال"
+    },
+    "fields": {
+      "companyName": "أسم الشركة",
+      "companyActivity": "نشاط الشركة",
+      "contactPerson": "اسم مسؤول التواصل",
+      "email": "البريد الإلكتروني",
+      "phone": "رقم الهاتف",
+      "region": "المنطقة",
+      "contractDuration": "مدة التعاقد",
+      "companyFile": "رقم ملف المنشأة",
+      "commercialRegistration": "رقم السجل التجاري",
+      "jobTitle": "المسمى الوظيفي",
+      "requiredProfession": "المهنة المطلوبة",
+      "workersCount": "عدد العمالة المطلوبة"
+    },
+    "validation": {
+      "companyName": "أسم الشركة مطلوب",
+      "contactPerson": "اسم مسؤول التواصل مطلوب",
+      "email": "البريد الإلكتروني مطلوب",
+      "emailInvalid": "يرجى إدخال بريد إلكتروني صالح",
+      "phone": "رقم الهاتف مطلوب",
+      "phoneInvalid": "يرجى إدخال رقم هاتف سعودي صالح",
+      "commercialRegistration": "رقم السجل التجاري مطلوب",
+      "companyFile": "رقم ملف المنشأة مطلوب",
+      "workersCount": "عدد العمالة المطلوبة مطلوب",
+      "workersCountInvalid": "يرجى إدخال عدد العمالة",
+      "requiredProfession": "المهنة المطلوبة مطلوبة",
+      "companyActivity": "نشاط الشركة مطلوب",
+      "region": "المنطقة مطلوبة",
+      "contractDuration": "مدة التعاقد مطلوبة",
+      "jobTitle": "المسمى الوظيفي مطلوب"
+    },
+    "alert": {
+      "success": "تم إرسال البيانات بنجاح"
+    }
+  }
+  

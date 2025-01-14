@@ -1,0 +1,40 @@
+{
+    "pageTitle": "Terms of Use",
+    "breadcrumb": "Terms of Use",
+    "title": "Terms and Conditions of Website Use",
+    "introduction": "Welcome to our website. Please read the following terms of use carefully before using this site. By using the site, you agree to comply with these terms and conditions. If you do not agree to any of these terms, please stop using the site immediately.",
+    "section1": {
+      "title": "1. Acceptance of Terms:",
+      "content": "By using the site, you agree to comply with these terms of use, as well as any applicable local or international laws and regulations."
+    },
+    "section2": {
+      "title": "2. Intellectual Property Rights:",
+      "content": "All content displayed on the site, including text, images, logos, and software, is owned by the company and protected by intellectual property laws.",
+      "content1": "Copying, modifying, or distributing any content without prior written permission from the company is prohibited."
+    },
+    "section3": {
+      "title": "3. Use of the Site:",
+      "content": "The site may only be used for lawful purposes and in accordance with these terms.",
+      "content1": "Using the site in a manner that infringes on others' rights or disrupts site operations is prohibited."
+    },
+    "section4": {
+      "title": "4. Account Registration:",
+      "content": "Users are required to provide accurate and complete information when registering an account.",
+      "content1": "The company reserves the right to cancel or suspend any account used in violation of these terms."
+    },
+    "section5": {
+      "title": "5. Privacy Policy:",
+      "content": "By using the site, you agree to our privacy policy, which governs how your personal data is collected and used.",
+      "content1": "To view the privacy policy, please visit [Privacy Policy Page Link]."
+    },
+    "section6": {
+      "title": "6. Disclaimer of Liability:",
+      "content": "Content and services are provided \"as is\" without any express or implied warranties.",
+      "content1": "The company is not liable for any damages resulting from the use of the site."
+    },
+    "section7": {
+      "title": "7. Amendments to Terms:",
+      "content": "The company reserves the right to modify these terms at any time.",
+      "content1": "Users will be notified of new changes, and continued use of the site indicates acceptance of the revised terms."
+    }
+  }

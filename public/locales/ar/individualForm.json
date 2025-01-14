@@ -1,0 +1,50 @@
+{
+    "helmet": {
+      "title": "شروط الاستخدام"
+    },
+    "breadcrumb": {
+      "name": "تسجيل فى خدمات الأفراد"
+    },
+    "form": {
+      "title": "سجّل الآن في خدمة الأفراد",
+      "subtitle": "انضم إلى شبكتنا واستفد من حلولنا المصممة خصيصًا لتلبية احتياجاتك",
+      "submit": "إرسال"
+    },
+    "citizenship": {
+      "saudi": "سعودي",
+      "nonSaudi": "غير سعودي"
+    },
+    "fields": {
+      "name": "الاسم",
+      "namePlaceholder": "اسم الشركة",
+      "jobTitle": "المسمى الوظيفي",
+      "jobTitlePlaceholder": "المسمى الوظيفي",
+      "contactPeriod": "فترة التواصل",
+      "contactPeriodPlaceholder": "مثال: صباحي",
+      "experience": "مدة الخبرة",
+      "experiencePlaceholder": "مدة الخبرة",
+      "email": "البريد الإلكتروني",
+      "emailPlaceholder": "example@email.com",
+      "cv": "إرفاق السيرة الذاتية",
+      "cvl": {
+        "label": "اضغط لتحميل",
+        "dragAndDrop": "أو السحب والإفلات",
+        "note": "PNG, JPG أو PDF (بحد أقصى 800x400px)"
+      }
+
+    },
+    "validation": {
+      "citizenship": "يرجى تحديد الجنسية",
+      "jobTitle": "المسمى الوظيفي مطلوب",
+      "contactPeriod": "فترة التواصل مطلوبة",
+      "experience": "مدة الخبرة مطلوبة",
+      "email": "البريد الإلكتروني مطلوب",
+      "emailInvalid": "يرجى إدخال بريد إلكتروني صالح",
+      "name": "الاسم مطلوب",
+      "cv": "يرجى إرفاق السيرة الذاتية"
+    },
+    "alert": {
+      "success": "تم إرسال البيانات بنجاح"
+    }
+  }
+  

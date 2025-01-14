@@ -54,7 +54,7 @@ const SliderHeader = () => {
               playsInline=""
               preload="auto"
             >
-              <source src="https://s3-figma-videos-production-sig.figma.com/video/1252915703189651761/TEAM/81fe/069d/-e6cc-4aa2-9003-241779d178c5?Expires=1736726400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=pszZO8hO1485GmNc2Hjznt0oD1uPzym073UV-xXnl8k3PWBd~vkp6l1N-jpPWdgs0M6C8c28a9znMhTr5G1~0GJQlsHwq2BVpy~7HtINHR-LOaqezG1moBhNqa~JH-bePWXIMMBK69HdMYWRmrZakq8JKkyurOBw3ofsNJAHzufTzrYdvbtf3upwSBFv8iKNKoFpK-r4VOkREsNWj~3EenNTPjNbAi6Uu1gc~8GUIaMuH~KvFm-CTzFbCH4NKA~4YvSVhZJJBB037tghe2Fsde7WfjE4E3lRIDm5mjHwLel-Kxy5WJ9OXqBm7sjs96Y7INIaULYRx2rBLbl3uJOY6g__" type="video/mp4" />
+              <source src="https://s3-figma-videos-production-sig.figma.com/video/1252915703189651761/TEAM/81fe/069d/-e6cc-4aa2-9003-241779d178c5?Expires=1737936000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=l4~65IZ03BuJMw50En4x7nedVLHUYqOKfs3eP45-pCPBhsSMJNc3Qal9FptNbh27ljR11GPuHt1dKxmzQxIAwiysYWfL2O8iMcnml6scswvNWZrSV0qrWQxDOTmpyUfR9fv0CCeQZ8WUaWIqViFoAg62nd-J4Jr3iXjvm66Ov9aOk6HSMGvcD4DgiJfyL2~Nl4Rh35bR8x~hggAykKh6mCp61xHIUuhEUCy~yXv4ciHQoW6OApfUNA7GmGxxgE6akZ062OM9ElrnEVU-Wa5AZvXC6N-FMw2UsZ5zUqrDizRUqCjFr~6Ra-~UuRCys2TumYsIhFMhx1yZGhETFTZlsw__" type="video/mp4" />
             </video>
           </div>
         <div className=" absolute bottom-0 start-0 w-full z-[1] text-center text-white ">

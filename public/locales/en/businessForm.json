@@ -1,0 +1,47 @@
+{
+  "helmet": {
+    "title": "Terms of Use"
+  },
+  "breadcrumb": {
+    "name": "Selected Service Name"
+  },
+  "form": {
+    "title": "Register Now for Business Service",
+    "subtitle": "Join our network and benefit from our tailored solutions to meet your business needs",
+    "submit": "Submit"
+  },
+  "fields": {
+    "companyName": "Company Name",
+    "companyActivity": "Company Activity",
+    "contactPerson": "Contact Person Name",
+    "email": "Email",
+    "phone": "Phone Number",
+    "region": "Region",
+    "contractDuration": "Contract Duration",
+    "companyFile": "Company File Number",
+    "commercialRegistration": "Commercial Registration Number",
+    "jobTitle": "Job Title",
+    "requiredProfession": "Required Profession",
+    "workersCount": "Number of Workers"
+  },
+  "validation": {
+    "companyName": "Company Name is required",
+    "contactPerson": "Contact Person Name is required",
+    "email": "Email is required",
+    "emailInvalid": "Please enter a valid email address",
+    "phone": "Phone Number is required",
+    "phoneInvalid": "Please enter a valid Saudi phone number",
+    "commercialRegistration": "Commercial Registration Number is required",
+    "companyFile": "Company File Number is required",
+    "workersCount": "Number of Workers is required",
+    "workersCountInvalid": "Please enter the number of workers",
+    "requiredProfession": "Required Profession is required",
+    "companyActivity": "Company Activity is required",
+    "region": "Region is required",
+    "contractDuration": "Contract Duration is required",
+    "jobTitle": "Job Title is required"
+  },
+  "alert": {
+    "success": "Data submitted successfully"
+  }
+}

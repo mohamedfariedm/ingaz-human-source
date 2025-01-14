@@ -79,7 +79,7 @@ const News = () => {
     <>
       <HelmetInfo titlePage={"أخبارنا"} />
       <div className="xl:w-[1152px] flex gap-[50px] flex-col relative mx-auto my-[164px] px-5 xl:px-0">
-        <BreadCrumb name={"جميع الاخبار"} />
+        <BreadCrumb name={t("all_news")} />
 
         <div className="main-container flex flex-col xl:w-[1152px] xl:flex-row gap-[122px] items-center relative mx-auto my-0">
           <div className="flex xl:w-[662px] justify-between items-start flex-wrap relative z-[6]">
